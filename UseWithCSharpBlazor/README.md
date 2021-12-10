@@ -9,5 +9,7 @@ FSharpUI\GreatSection.fs:
 
     All you need to do is just wrap functional style Bolero.Node into a class.
 
+    dotnet run --project .\CSharpWASMApp\CSharpWASMApp.csproj
+
 
 Of course, you can reuse csharp library in a fsharp blazor app. To do that you will need Fun.Blazor.Cli to auto generate some binding files for you. It is just similar with MinimalBlazorWASMAppWithMudBlazor.
