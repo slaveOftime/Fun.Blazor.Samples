@@ -368,3 +368,4 @@ deploy/
 /Fun.Blazor.Docs.Wasm/wwwroot/code-docs
 
 global.json
+MinimalBlazorWASMAppWithShoelaceAndTailwind/wwwroot/app-generated.css

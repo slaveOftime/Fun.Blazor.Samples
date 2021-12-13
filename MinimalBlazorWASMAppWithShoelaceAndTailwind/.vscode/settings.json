@@ -1,0 +1,12 @@
+{
+    "html.customData": [
+        "./.vscode/shoelace-vscode.html-custom-data.json"
+    ],
+    "tailwindCSS.includeLanguages": {
+        "fsharp": "html"
+    },
+    "css.validate": false,
+    "editor.quickSuggestions": {
+        "strings": true
+    }
+}
