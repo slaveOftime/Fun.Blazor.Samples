@@ -14,8 +14,7 @@ type Index() =
     // to get intellicense for embeded html
     static member page =
         let root = Bolero.Server.Html.rootComp<Index>
-        Template.html
-            $"""
+        Template.html $"""
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +28,8 @@ type Index() =
     <script src="_framework/blazor.server.js"></script>
 </body>
 </html>
-            """
+        """
+
 
     // This requires Fun.Blazor.Feliz
     static member page2 =
