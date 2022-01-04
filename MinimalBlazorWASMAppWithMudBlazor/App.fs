@@ -12,6 +12,7 @@ let app =
         div () {
             childContent [
                 div.create $"Here is the count {count}"
+                MudThemeProvider'.create()
                 MudButton'() {
                     Color Color.Primary
                     Variant Variant.Filled
