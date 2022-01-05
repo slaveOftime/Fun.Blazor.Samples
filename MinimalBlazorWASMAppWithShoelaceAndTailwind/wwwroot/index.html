@@ -19,6 +19,17 @@
     <script src="_framework/blazor.webassembly.js"></script>
     <script type="module"
         src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.62/dist/shoelace.js"></script>
+
+    <script>
+        Blazor.registerCustomEventType('sl-change', {
+            browserEventName: 'sl-change',
+            createEventArgs: event => {
+                return {
+                    value: event.target.value
+                };
+            }
+        });
+    </script>
 </body>
 
 </html>
