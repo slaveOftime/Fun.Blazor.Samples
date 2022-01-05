@@ -10,8 +10,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bolero.Server" Version="0.18.16" />
-    <PackageReference Include="Fun.Blazor" Version="1.1.4-beta01" />
-    <PackageReference Include="Fun.Blazor.Feliz" Version="1.1.4-beta01" />
+    <PackageReference Include="Fun.Blazor" Version="1.2.0" />
+    <PackageReference Include="Fun.Blazor.Feliz" Version="1.2.0" />
     <PackageReference Include="Fun.Blazor.HtmlTemplate" Version="0.2.2" />
   </ItemGroup>
   <ItemGroup>
