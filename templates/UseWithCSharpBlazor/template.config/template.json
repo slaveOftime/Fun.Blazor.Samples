@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "identity": "Fun.Blazor.CSharp.FSharp.Mixed",
+    "shortName": "fun-blazor-csharp-fshar-mixed",
+    "name": "Fun.Blazor.CSharp.FSharp.Mixed",
+    "author": "albertwoo",
+    "classifications": [
+        "Web",
+        "blazor-wasm",
+        "F#",
+        "bolero",
+        "blazor",
+        "fun-blazor",
+        "Fun.Blazor"
+    ],
+    "type": {
+        "language": "F#"
+    },
+    "tags": {
+        "type": "project",
+        "language": "F#"
+    },
+    "sourceName": "AppName",
+    "preferNameDirectory": true
+}
