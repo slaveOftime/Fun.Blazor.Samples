@@ -3,7 +3,7 @@
     "identity": "Fun.Blazor.Minimal.Blazor.Server",
     "shortName": "fun-blazor-min-server",
     "name": "Fun.Blazor.Minimal.Blazor.Server",
-    "author": "albertwoo",
+    "author": "slaveoftime",
     "classifications": [
         "Web",
         "blazor-server",

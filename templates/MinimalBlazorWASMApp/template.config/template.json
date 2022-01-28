@@ -3,7 +3,7 @@
     "identity": "Fun.Blazor.Minimal.Blazor.Wasm",
     "shortName": "fun-blazor-min-wasm",
     "name": "Fun.Blazor.Minimal.Blazor.Wasm",
-    "author": "albertwoo",
+    "author": "slaveoftime",
     "classifications": [
         "Web",
         "blazor-wasm",
