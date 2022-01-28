@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "identity": "Fun.Blazor.Grpc",
+    "shortName": "fun-blazor-grpc",
+    "name": "Fun.Blazor.Grpc",
+    "author": "albertwoo",
+    "classifications": [
+        "Web",
+        "GRPC",
+        "F#",
+        "bolero",
+        "blazor",
+        "fun-blazor",
+        "Fun.Blazor"
+    ],
+    "type": {
+        "language": "F#"
+    },
+    "tags": {
+        "type": "project",
+        "language": "F#"
+    },
+    "sourceName": "AppName",
+    "preferNameDirectory": true
+}
