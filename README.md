@@ -1,4 +1,4 @@
-This repo contains some basic show case demoes. .NET 6 SDK is required for run them.
+This repo contains some basic showcase demos. .NET 6 SDK is required for run them.
 
 Check the README.md file under each demo.
 
