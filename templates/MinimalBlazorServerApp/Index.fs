@@ -1,5 +1,6 @@
 namespace Demo
 
+open Microsoft.AspNetCore.Mvc.Rendering
 open Fun.Blazor
 
 // page or page2 is just two styles for define Bolero.Node, you can pick one or use both
@@ -8,12 +9,35 @@ type Index() =
     inherit FunBlazorComponent()
 
     override _.Render() = app
+    
+
+    // This requires Fun.Blazor.Feliz
+    static member page1 ctx =
+        fragment {
+            doctype "html"
+            html' {
+                head {
+                    title { "Fun Blazor" }
+                    baseUrl "/"
+                    meta { charset "utf-8" }
+                    meta {
+                        name "viewport"
+                        content "width=device-width, initial-scale=1.0"
+                    }
+                }
+                body {
+                    rootComp<Index> ctx RenderMode.ServerPrerendered
+                    script { src "_framework/blazor.server.js" }
+                }
+            }
+        }
+
 
     // This requires Fun.Blazor.HtmlTemplate
     // You can use VSCode + Ionide-fsharp + Highlight HTML/SQL templates in F#
     // to get intellicense for embeded html
-    static member page =
-        let root = Bolero.Server.Html.rootComp<Index>
+    static member page2 ctx =
+        let root = rootComp<Index> ctx RenderMode.ServerPrerendered
         Template.html $"""
 <!DOCTYPE html>
 <html>
@@ -30,23 +54,3 @@ type Index() =
 </html>
         """
 
-
-    // This requires Fun.Blazor.Feliz
-    static member page2 =
-        html.doctypeHtml [
-            html.head [
-                html.title "Fun Blazor"
-                html.baseUrl "/"
-                html.meta [ attr.charsetUtf8 ]
-                html.meta [
-                    attr.name "viewport"
-                    attr.content "width=device-width, initial-scale=1.0"
-                ]
-            ]
-            html.body [
-                attr.childContent [
-                    Bolero.Server.Html.rootComp<Index>
-                    Bolero.Server.Html.boleroScript
-                ]
-            ]
-        ]

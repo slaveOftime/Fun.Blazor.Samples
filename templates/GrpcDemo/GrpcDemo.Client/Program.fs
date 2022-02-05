@@ -7,14 +7,15 @@ open System.Net.Http
 
 
 let builder = WebAssemblyHostBuilder.CreateDefault(Environment.GetCommandLineArgs())
-        
+
 builder
-    .AddFunBlazorNode("#app", app)
+    .AddFunBlazor("#app", app)
     .Services
     .AddSingleton<GrpcChannel>(fun (_: IServiceProvider) ->
         let httpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWebText, new HttpClientHandler())
         GrpcChannel.ForAddress("https://localhost:5001", GrpcChannelOptions(HttpHandler = httpHandler))
     )
-    .AddFunBlazor() |> ignore
-        
+    .AddFunBlazorWasm()
+|> ignore
+
 builder.Build().RunAsync() |> ignore

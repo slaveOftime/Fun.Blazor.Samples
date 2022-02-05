@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
@@ -11,8 +12,7 @@
     <Compile Include="Startup.fs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Fun.Blazor" Version="1.2.0" />
-    <PackageReference Include="Fun.Blazor.Feliz" Version="1.2.0" />
+    <PackageReference Include="Fun.Blazor.Wasm" Version="2.0.0-beta002" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
     <PackageReference Include="MudBlazor" FunBlazorStyle="CE" Version="6.0.4" />

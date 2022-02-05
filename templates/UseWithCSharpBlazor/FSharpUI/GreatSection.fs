@@ -10,14 +10,12 @@ module GreatSection =
         adaptiview () {
             let! count, setCount = cval(initCount).WithSetter()
 
-            div () {
-                childContent [
-                    div.create $"Here is the count {count}"
-                    button () {
-                        onclick (fun _ -> setCount (count + 1))
-                        childContent "Increase"
-                    }
-                ]
+            div {
+                div { $"Here is the count {count}" }
+                button {
+                    onclick (fun _ -> setCount (count + 1))
+                    "Increase"
+                }
             }
         }
 

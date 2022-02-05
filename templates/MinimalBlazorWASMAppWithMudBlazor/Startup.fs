@@ -6,6 +6,6 @@ open Demo
 
 let builder = WebAssemblyHostBuilder.CreateDefault(Environment.GetCommandLineArgs())
 
-builder.AddFunBlazorNode("#app", app).Services.AddFunBlazor().AddMudServices() |> ignore
+builder.AddFunBlazor("#app", app).Services.AddFunBlazorWasm().AddMudServices() |> ignore
 
 builder.Build().RunAsync() |> ignore
