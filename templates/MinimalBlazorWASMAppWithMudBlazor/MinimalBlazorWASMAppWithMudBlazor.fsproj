@@ -12,7 +12,7 @@
     <Compile Include="Startup.fs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Fun.Blazor.Wasm" Version="2.0.0-beta002" />
+    <PackageReference Include="Fun.Blazor.Wasm" Version="2.0.0-beta*" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
     <PackageReference Include="MudBlazor" FunBlazorStyle="CE" Version="6.0.4" />

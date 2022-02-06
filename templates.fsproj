@@ -10,11 +10,10 @@
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
 
-
     <!-- NuGet config -->
     <PackageType>Template</PackageType>
     <PackageId>Fun.Blazor.Templates</PackageId>
-    <PackageVersion>2.0.0-beta001</PackageVersion>
+    <PackageVersion>2.0.0-beta002</PackageVersion>
     <PackageTags>templates;blazor;bolero;fun-blazor;fsharp</PackageTags>
     <PackageProjectUrl>https://github.com/slaveOftime/Fun.Blazor.Samples</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
