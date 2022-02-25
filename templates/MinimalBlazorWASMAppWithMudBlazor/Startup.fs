@@ -2,7 +2,7 @@
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.AspNetCore.Components.WebAssembly.Hosting
 open MudBlazor.Services
-open Demo
+open MinimalBlazorWASMAppWithMudBlazor
 
 let builder = WebAssemblyHostBuilder.CreateDefault(Environment.GetCommandLineArgs())
 

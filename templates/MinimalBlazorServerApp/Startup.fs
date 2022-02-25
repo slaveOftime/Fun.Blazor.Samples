@@ -15,6 +15,6 @@ let app = builder.Build()
 app.UseStaticFiles() |> ignore
 
 app.MapBlazorHub() |> ignore
-app.MapFunBlazor(Demo.Index.page1) |> ignore
+app.MapFunBlazor(MinimalBlazorServerApp.Index.page1) |> ignore
 
 app.Run()

@@ -1,5 +1,5 @@
 ﻿[<AutoOpen>]
-module Demo.DialogDemo
+module MinimalBlazorWASMAppWithMudBlazor.DialogDemo
 
 open FSharp.Data.Adaptive
 open Fun.Blazor

@@ -1,5 +1,5 @@
 [<AutoOpen>]
-module Demo.App
+module MinimalBlazorServerApp.App
 
 open FSharp.Data.Adaptive
 open Fun.Blazor

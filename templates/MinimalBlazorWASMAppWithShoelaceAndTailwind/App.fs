@@ -1,5 +1,5 @@
 [<AutoOpen>]
-module Demo.App
+module MinimalBlazorWASMAppWithShoelaceAndTailwind.App
 
 open System
 open Microsoft.AspNetCore.Components

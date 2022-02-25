@@ -1,5 +1,5 @@
 ﻿[<AutoOpen>]
-module Demo.Counter
+module MinimalBlazorWASMAppWithMudBlazor.Counter
 
 open FSharp.Data.Adaptive
 open Fun.Blazor

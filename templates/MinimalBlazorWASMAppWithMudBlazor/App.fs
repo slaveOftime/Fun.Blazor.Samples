@@ -1,5 +1,5 @@
 [<AutoOpen>]
-module Demo.App
+module MinimalBlazorWASMAppWithMudBlazor.App
 
 open Fun.Blazor
 open MudBlazor
