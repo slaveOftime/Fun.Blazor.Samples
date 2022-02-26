@@ -1,3 +1,4 @@
+// hot-reload
 [<AutoOpen>]
 module MinimalBlazorServerApp.App
 

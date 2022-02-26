@@ -6,7 +6,12 @@ open Fun.Blazor
 // page or page2 is just two styles for define Bolero.Node, you can pick one or use both
 // page/page2 will be called in Startup.fs
 type Index() =
+#if DEBUG
     inherit HotReloadComponent("MinimalBlazorServerApp.App.app", app)
+#else
+    inherit FunBlazorComponent()
+    override _.Render() = app
+#endif
 
     // This requires Fun.Blazor.Feliz
     static member page1 ctx =
