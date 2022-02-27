@@ -1,5 +1,6 @@
-﻿[<AutoOpen>]
-module MinimalBlazorWASMAppWithMudBlazor.Counter
+﻿// hot-reload
+[<AutoOpen>]
+module BlazorWASMAppWithMudBlazor.Counter
 
 open FSharp.Data.Adaptive
 open Fun.Blazor
@@ -15,6 +16,6 @@ let counter =
             Color Color.Primary
             Variant Variant.Filled
             OnClick(fun _ -> setCount (count + 1))
-            "Increase"
+            "Increase 1"
         }
     }

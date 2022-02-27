@@ -1,6 +1,6 @@
 Tips:
 
-1. Check the line in file MinimalBlazorWASMApp.fsproj: 
+1. Check the line in file BlazorWASMAppWithMudBlazor.fsproj: 
 
     It required MudBlazor. Also has attribute FunBlazorStyle.
 

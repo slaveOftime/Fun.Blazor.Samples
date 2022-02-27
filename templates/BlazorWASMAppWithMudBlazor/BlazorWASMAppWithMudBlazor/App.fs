@@ -1,5 +1,6 @@
+// hot-reload
 [<AutoOpen>]
-module MinimalBlazorWASMAppWithMudBlazor.App
+module BlazorWASMAppWithMudBlazor.App
 
 open Fun.Blazor
 open MudBlazor

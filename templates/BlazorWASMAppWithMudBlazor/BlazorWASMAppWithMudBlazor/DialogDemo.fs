@@ -1,5 +1,6 @@
-﻿[<AutoOpen>]
-module MinimalBlazorWASMAppWithMudBlazor.DialogDemo
+﻿// hot-reload
+[<AutoOpen>]
+module BlazorWASMAppWithMudBlazor.DialogDemo
 
 open FSharp.Data.Adaptive
 open Fun.Blazor

@@ -3,19 +3,12 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:57397/",
-      "sslPort": 44337
+      "applicationUrl": "http://localhost:57640/",
+      "sslPort": 44319
     }
   },
   "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "MinimalBlazorWASMApp": {
+    "BlazorWASMAppWithMudBlazor.Server": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
