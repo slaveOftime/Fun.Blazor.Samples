@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="JsInterop.fs" />
     <Compile Include="App.fs" />
     <Compile Include="Startup.fs" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿open System
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.AspNetCore.Components.WebAssembly.Hosting
-open MinimalBlazorWASMAppWithShoelaceAndTailwind
+open BlazorWASMAppWithShoelace
 
 let builder = WebAssemblyHostBuilder.CreateDefault(Environment.GetCommandLineArgs())
 
