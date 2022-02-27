@@ -7,7 +7,12 @@ type Index() =
 
 //-:cnd:noEmit
 #if DEBUG
-    inherit HotReloadComponent("BlazorWASMAppWithMudBlazor.App.app", BlazorWASMAppWithMudBlazor.App.app)
+    inherit HotReloadComponent
+        (
+            "BlazorWASMAppWithMudBlazor.App.app",
+            BlazorWASMAppWithMudBlazor.App.app,
+            staticAssetsDir = __SOURCE_DIRECTORY__ + "/../BlazorWASMAppWithMudBlazor/wwwroot"
+        )
 #else
     inherit FunBlazorComponent()
     override _.Render() = BlazorWASMAppWithMudBlazor.App.app
