@@ -18,9 +18,9 @@ app.MapBlazorHub() |> ignore
 
 //-:cnd:noEmit
 #if DEBUG
-app.MapFunBlazor(BlazorServerApp.Index.page1, hotReload = true) |> ignore
+app.MapFunBlazor(BlazorWASMApp.Server.Index.page, hotReload = true) |> ignore
 #else
-app.MapFunBlazor(BlazorServerApp.Index.page1) |> ignore
+app.MapFunBlazor(BlazorWASMApp.Server.Index.page) |> ignore
 #endif
 //+:cnd:noEmit
 

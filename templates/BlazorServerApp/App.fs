@@ -3,7 +3,7 @@
 // It has depdency requirement: the root is the app which is set in the Index.fs
 // All other files which want have hot reload, need to drill down to that file, and all the middle file should also add the '// hot-reload' flag at the top of the file
 [<AutoOpen>]
-module MinimalBlazorServerApp.App
+module BlazorServerApp.App
 
 open FSharp.Data.Adaptive
 open Fun.Blazor

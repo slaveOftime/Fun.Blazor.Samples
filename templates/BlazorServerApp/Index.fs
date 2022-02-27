@@ -1,4 +1,4 @@
-namespace MinimalBlazorServerApp
+namespace BlazorServerApp
 
 open Microsoft.AspNetCore.Mvc.Rendering
 open Fun.Blazor
@@ -9,7 +9,7 @@ type Index() =
 
 //-:cnd:noEmit
 #if DEBUG
-    inherit HotReloadComponent("MinimalBlazorServerApp.App.app", app)
+    inherit HotReloadComponent("BlazorServerApp.App.app", app)
 #else
     inherit FunBlazorComponent()
     override _.Render() = app

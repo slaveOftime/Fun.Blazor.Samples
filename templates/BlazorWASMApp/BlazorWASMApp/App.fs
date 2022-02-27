@@ -1,5 +1,6 @@
+// hot-reload
 [<AutoOpen>]
-module MinimalBlazorWASMApp.App
+module BlazorWASMApp.App
 
 open FSharp.Data.Adaptive
 open Fun.Blazor

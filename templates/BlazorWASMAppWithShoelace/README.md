@@ -12,12 +12,22 @@ And open the the same folder as the README.md file in VSCode
 The reason you can get some intellicense for shoelace is because there is some meta file I downloaded from shoelace and put it in .vscode. [You can check more detail here](https://shoelace.style/getting-started/usage?id=code-completion). So if you want to support other web components code auto completion you can use this as a reference.
 
 
+## Dev with hot-reload
+
     cd to BlazorWASMAppWithShoelace
     pnpm install
     pnpm run watch-css
 
-    cd to BlazorWASMAppWithShoelace (dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta019)
+    cd to BlazorWASMAppWithShoelace
     fun-blazor watch .\BlazorWASMAppWithShoelace.fsproj -s https://localhost:5001
 
-    cd to BlazorWASMAppWithShoelace.Server (This is for hot-reload)
+    cd to BlazorWASMAppWithShoelace.Server
     dotnet run
+
+    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta019
+
+
+## Dev without hot-reload
+
+    cd to BlazorWASMAppWithShoelace
+    dotnet watch run

@@ -1,8 +1,8 @@
 {
     "$schema": "http://json.schemastore.org/template",
-    "identity": "Fun.Blazor.Minimal.Blazor.Wasm",
-    "shortName": "fun-blazor-min-wasm",
-    "name": "Fun.Blazor.Minimal.Blazor.Wasm",
+    "identity": "Fun.Blazor.Blazor.Wasm",
+    "shortName": "fun-blazor-wasm",
+    "name": "Fun.Blazor.Blazor.Wasm",
     "author": "slaveoftime",
     "classifications": [
         "Web",
@@ -20,6 +20,6 @@
         "type": "project",
         "language": "F#"
     },
-    "sourceName": "MinimalBlazorWASMApp",
+    "sourceName": "BlazorWASMApp",
     "preferNameDirectory": true
 }

@@ -14,4 +14,19 @@ Tips:
 
 3. According to MudBlazor, you should also add related css/js resources in wwwroot/index.html
 
+
+## Dev with hot-reload
+
+    cd to BlazorWASMAppWithMudBlazor.Server
     dotnet run
+
+    cd to BlazorWASMAppWithMudBlazor
+    fun-blazor watch .\BlazorWASMAppWithMudBlazor.fsproj -s https://localhost:5001
+
+    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta019
+
+
+## Dev without hot-reload
+
+    cd to BlazorWASMAppWithMudBlazor
+    dotnet watch run

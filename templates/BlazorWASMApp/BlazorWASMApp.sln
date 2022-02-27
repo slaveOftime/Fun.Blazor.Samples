@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BlazorWASMApp", "BlazorWASMApp\BlazorWASMApp.fsproj", "{494AD3A5-BFE3-4E2D-857E-D1FFA376D8B7}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BlazorWASMApp.Server", "BlazorWASMApp.Server\BlazorWASMApp.Server.fsproj", "{235B5ABA-DAEF-434C-83CD-E9B69EA8174F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{494AD3A5-BFE3-4E2D-857E-D1FFA376D8B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{494AD3A5-BFE3-4E2D-857E-D1FFA376D8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{494AD3A5-BFE3-4E2D-857E-D1FFA376D8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{494AD3A5-BFE3-4E2D-857E-D1FFA376D8B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235B5ABA-DAEF-434C-83CD-E9B69EA8174F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235B5ABA-DAEF-434C-83CD-E9B69EA8174F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235B5ABA-DAEF-434C-83CD-E9B69EA8174F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235B5ABA-DAEF-434C-83CD-E9B69EA8174F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
