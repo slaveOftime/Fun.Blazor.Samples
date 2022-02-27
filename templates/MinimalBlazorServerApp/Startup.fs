@@ -16,10 +16,12 @@ app.UseStaticFiles() |> ignore
 
 app.MapBlazorHub() |> ignore
 
+//-:cnd:noEmit
 #if DEBUG
 app.MapFunBlazor(MinimalBlazorServerApp.Index.page1, hotReload = true) |> ignore
 #else
 app.MapFunBlazor(MinimalBlazorServerApp.Index.page1) |> ignore
 #endif
+//+:cnd:noEmit
 
 app.Run()
