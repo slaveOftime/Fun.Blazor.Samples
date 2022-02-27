@@ -33,6 +33,11 @@ type Index() =
                 body {
                     rootComp<Index> ctx RenderMode.ServerPrerendered
                     script { src "_framework/blazor.server.js" }
+//-:cnd:noEmit
+#if DEBUG
+                    hotReloadJSInterop
+#endif
+//+:cnd:noEmit
                 }
             }
         }
@@ -43,6 +48,16 @@ type Index() =
     // to get intellicense for embeded html
     static member page2 ctx =
         let root = rootComp<Index> ctx RenderMode.ServerPrerendered
+
+        let hotReload =
+//-:cnd:noEmit
+#if DEBUG
+            hotReloadJSInterop
+#else
+            html.none
+#endif     
+//+:cnd:noEmit
+
         Template.html $"""
 <!DOCTYPE html>
 <html>
@@ -55,6 +70,7 @@ type Index() =
 <body>
     {root}
     <script src="_framework/blazor.server.js"></script>
+    {hotReload}
 </body>
 </html>
         """
