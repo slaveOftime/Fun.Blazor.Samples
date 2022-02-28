@@ -9,7 +9,7 @@ Tailwindcss will drive all the theme, spacing etc. In ./wwwroot/app.css all the 
 It is recommend you to use VSCode for this and install extension: Tailwind CSS IntelliSense + Ionide-fsharp \
 And open the the same folder as the README.md file in VSCode 
 
-The reason you can get some intellicense for shoelace is because there is some meta file I downloaded from shoelace and put it in .vscode. [You can check more detail here](https://shoelace.style/getting-started/usage?id=code-completion). So if you want to support other web components code auto completion you can use this as a reference.
+The reason you can get some intellisense for shoelace is because there is some meta file I downloaded from shoelace and put it in .vscode. [You can check more detail here](https://shoelace.style/getting-started/usage?id=code-completion). So if you want to support other web components code auto completion you can use this as a reference.
 
 
 ## Dev with hot-reload
@@ -18,11 +18,11 @@ The reason you can get some intellicense for shoelace is because there is some m
     pnpm install
     pnpm run watch-css
 
-    cd to BlazorWASMAppWithShoelace
-    fun-blazor watch .\BlazorWASMAppWithShoelace.fsproj -s https://localhost:5001
-
     cd to BlazorWASMAppWithShoelace.Server
     dotnet run
+
+    cd to BlazorWASMAppWithShoelace
+    fun-blazor watch .\BlazorWASMAppWithShoelace.fsproj -s https://localhost:5001
 
     > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta019
 
