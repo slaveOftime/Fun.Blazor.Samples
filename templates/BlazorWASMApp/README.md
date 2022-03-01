@@ -15,7 +15,7 @@ Startup.fs is for hooking up everything and configuring server
     cd to BlazorWASMApp.Server
     dotnet run
 
-    > dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta022
+    > dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta023
 
 
 ## Dev without hot-reload
