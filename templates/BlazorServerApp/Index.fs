@@ -6,13 +6,14 @@ open Fun.Blazor
 // page or page2 is just two styles for define Bolero.Node, you can pick one or use both
 // page/page2 will be called in Startup.fs
 type Index() =
-
-//-:cnd:noEmit
-#if DEBUG
-    inherit HotReloadComponent("BlazorServerApp.App.app", app)
-#else
     inherit FunBlazorComponent()
-    override _.Render() = app
+
+    override _.Render() =
+//-:cnd:noEmit
+#if DEBUG       
+        html.hotReloadComp (BlazorServerApp.App.app, "BlazorServerApp.App.app")
+#else
+        BlazorServerApp.App.app
 #endif
 //+:cnd:noEmit
 
@@ -35,7 +36,7 @@ type Index() =
                     script { src "_framework/blazor.server.js" }
 //-:cnd:noEmit
 #if DEBUG
-                    hotReloadJSInterop
+                    html.hotReloadJSInterop
 #endif
 //+:cnd:noEmit
                 }
@@ -52,7 +53,7 @@ type Index() =
         let hotReload =
 //-:cnd:noEmit
 #if DEBUG
-            hotReloadJSInterop
+            html.hotReloadJSInterop
 #else
             html.none
 #endif     

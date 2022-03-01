@@ -4,20 +4,17 @@ open Microsoft.AspNetCore.Mvc.Rendering
 open Fun.Blazor
 
 type Index() =
-
-//-:cnd:noEmit
-#if DEBUG
-    inherit HotReloadComponent
-        (
-            "BlazorWASMApp.App.app",
-            BlazorWASMApp.App.app,
-            staticAssetsDir = __SOURCE_DIRECTORY__ + "/../BlazorWASMApp/wwwroot"
-        )
-#else
     inherit FunBlazorComponent()
-    override _.Render() = BlazorWASMApp.App.app
+    
+    override _.Render() =
+//-:cnd:noEmit
+#if DEBUG       
+        html.hotReloadComp (BlazorWASMApp.App.app, "BlazorWASMApp.App.app")
+#else
+        BlazorWASMApp.App.app
 #endif
 //+:cnd:noEmit
+
 
     static member page ctx =
         let root = rootComp<Index> ctx RenderMode.ServerPrerendered
@@ -25,7 +22,7 @@ type Index() =
         let hotReload =
 //-:cnd:noEmit
 #if DEBUG
-            hotReloadJSInterop
+            html.hotReloadJSInterop
 #else
             html.none
 #endif     

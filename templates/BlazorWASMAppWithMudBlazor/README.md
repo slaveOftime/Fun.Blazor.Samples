@@ -17,13 +17,13 @@ Tips:
 
 ## Dev with hot-reload
 
+    cd to BlazorWASMAppWithMudBlazor
+    fun-blazor watch .\BlazorWASMAppWithMudBlazor.fsproj
+
     cd to BlazorWASMAppWithMudBlazor.Server
     dotnet run
 
-    cd to BlazorWASMAppWithMudBlazor
-    fun-blazor watch .\BlazorWASMAppWithMudBlazor.fsproj -s https://localhost:5001
-
-    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta019
+    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta022
 
 
 ## Dev without hot-reload

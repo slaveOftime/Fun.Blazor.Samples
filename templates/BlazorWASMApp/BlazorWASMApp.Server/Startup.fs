@@ -1,4 +1,6 @@
-﻿open System
+﻿#nowarn "0020"
+
+open System
 open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.DependencyInjection
@@ -6,22 +8,15 @@ open Microsoft.Extensions.DependencyInjection
 
 let builder = WebApplication.CreateBuilder(Environment.GetCommandLineArgs())
 
-builder.Services.AddControllersWithViews() |> ignore
-builder.Services.AddServerSideBlazor().Services.AddFunBlazorServer() |> ignore
+builder.Services.AddControllersWithViews()
+builder.Services.AddServerSideBlazor().Services.AddFunBlazorServer()
 
 
 let app = builder.Build()
 
-app.UseStaticFiles() |> ignore
+app.UseStaticFiles()
 
-app.MapBlazorHub() |> ignore
-
-//-:cnd:noEmit
-#if DEBUG
-app.MapFunBlazor(BlazorWASMApp.Server.Index.page, hotReload = true) |> ignore
-#else
-app.MapFunBlazor(BlazorWASMApp.Server.Index.page) |> ignore
-#endif
-//+:cnd:noEmit
+app.MapBlazorHub()
+app.MapFunBlazor(BlazorWASMApp.Server.Index.page)
 
 app.Run()

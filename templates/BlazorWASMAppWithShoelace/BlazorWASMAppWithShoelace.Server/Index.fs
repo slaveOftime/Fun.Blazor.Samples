@@ -5,20 +5,16 @@ open Fun.Blazor
 
 
 type Index() =
-
-    //-:cnd:noEmit
-#if DEBUG
-    inherit HotReloadComponent
-        (
-            "BlazorWASMAppWithShoelace.App.app",
-            BlazorWASMAppWithShoelace.App.app,
-            staticAssetsDir = __SOURCE_DIRECTORY__ + "/../BlazorWASMAppWithShoelace/wwwroot"
-        )
-#else
     inherit FunBlazorComponent()
-    override _.Render() = BlazorWASMAppWithShoelace.App.app
+
+    override _.Render() =
+//-:cnd:noEmit
+#if DEBUG       
+        html.hotReloadComp (BlazorWASMAppWithShoelace.App.app, "BlazorWASMAppWithShoelace.App.app")
+#else
+        BlazorWASMAppWithShoelace.App.app
 #endif
-    //+:cnd:noEmit
+//+:cnd:noEmit
 
     static member page ctx =
         let root = rootComp<Index> ctx RenderMode.ServerPrerendered
@@ -26,7 +22,7 @@ type Index() =
         let hotReload =
 //-:cnd:noEmit
 #if DEBUG
-            hotReloadJSInterop
+            html.hotReloadJSInterop
 #else
             html.none
 #endif

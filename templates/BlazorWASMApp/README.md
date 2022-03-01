@@ -9,13 +9,13 @@ Startup.fs is for hooking up everything and configuring server
 
 ## Dev with hot-reload
 
+    cd to BlazorWASMApp
+    fun-blazor watch .\BlazorWASMApp.fsproj 
+
     cd to BlazorWASMApp.Server
     dotnet run
 
-    cd to BlazorWASMApp
-    fun-blazor watch .\BlazorWASMApp.fsproj -s https://localhost:5001
-
-    > dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta019
+    > dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta022
 
 
 ## Dev without hot-reload

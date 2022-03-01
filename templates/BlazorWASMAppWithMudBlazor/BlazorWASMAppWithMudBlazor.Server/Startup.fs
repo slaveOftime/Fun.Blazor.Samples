@@ -18,13 +18,6 @@ let app = builder.Build()
 app.UseStaticFiles()
 
 app.MapBlazorHub()
-
-//-:cnd:noEmit
-#if DEBUG
-app.MapFunBlazor(BlazorWASMAppWithMudBlazor.Server.Index.page, hotReload = true)
-#else
 app.MapFunBlazor(BlazorWASMAppWithMudBlazor.Server.Index.page)
-#endif
-//+:cnd:noEmit
 
 app.Run()
