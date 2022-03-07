@@ -23,7 +23,7 @@ Tips:
     cd to BlazorWASMAppWithMudBlazor.Server
     dotnet run
 
-    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta023
+    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta028
 
 
 ## Dev without hot-reload

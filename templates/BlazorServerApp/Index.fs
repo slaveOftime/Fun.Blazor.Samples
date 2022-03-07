@@ -17,7 +17,6 @@ type Index() =
 #endif
 //+:cnd:noEmit
 
-    // This requires Fun.Blazor.Feliz
     static member page1 ctx =
         fragment {
             doctype "html"
