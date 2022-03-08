@@ -8,11 +8,12 @@ open BlazorWASMAppWithShoelace
 
 let builder = WebAssemblyHostBuilder.CreateDefault(Environment.GetCommandLineArgs())
 
+
 //-:cnd:noEmit
 #if DEBUG
-builder.AddFunBlazor("#app", html.hotReloadComp(app, "BlazorWASMAppWithShoelace.App.app"))
+builder.AddFunBlazor("#app", html.hotReloadComp(entry, "BlazorWASMAppWithShoelace.App.entry"))
 #else
-builder.AddFunBlazor("#app", app)
+builder.AddFunBlazor("#app", entry)
 #endif
 //+:cnd:noEmit
 

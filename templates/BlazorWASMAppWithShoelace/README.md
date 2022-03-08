@@ -15,16 +15,15 @@ The reason you can get some intellisense for shoelace is because there is some m
 ## Dev with hot-reload
 
     cd to BlazorWASMAppWithShoelace
+
     pnpm install
     pnpm run watch-css
 
-    cd to BlazorWASMAppWithShoelace
     fun-blazor watch .\BlazorWASMAppWithShoelace.fsproj
 
-    cd to BlazorWASMAppWithShoelace.Server
-    dotnet run
+    dotnet run --project .\BlazorWASMAppWithShoelace.fsproj
 
-    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta028
+    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta029
 
 
 ## Dev without hot-reload

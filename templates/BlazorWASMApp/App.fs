@@ -12,8 +12,8 @@ let app =
         div {
             div { $"Here is the count {count}" }
             button {
-                onclick (fun _ -> setCount (count + 1))
-                "Increase"
+                onclick (fun _ -> setCount (count + 2))
+                "Increase by 2"
             }
         }
     }
