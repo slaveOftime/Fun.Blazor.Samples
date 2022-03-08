@@ -10,12 +10,12 @@ Startup.fs is for hooking up everything and configuring server
 ## Dev with hot-reload
 
     Open terminal and run
-    fun-blazor watch .\BlazorServerApp.fsproj
-
-    Open terminal and run
     dotnet run
 
-    > This required 'dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta028'
+    Open terminal and run
+    fun-blazor watch .\BlazorServerApp.fsproj
+
+    > This required 'dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta029'
     
 ## Dev without hot-reload
 

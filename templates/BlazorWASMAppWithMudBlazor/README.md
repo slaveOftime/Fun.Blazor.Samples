@@ -17,7 +17,10 @@ Tips:
 
 ## Dev with hot-reload
 
-    fun-blazor watch .\BlazorWASMAppWithMudBlazor.fsproj
+    Open terminal and run
     dotnet run --project .\BlazorWASMAppWithMudBlazor.fsproj
+    
+    Open terminal and run
+    fun-blazor watch .\BlazorWASMAppWithMudBlazor.fsproj
 
     > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta029
