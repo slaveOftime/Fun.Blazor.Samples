@@ -3,7 +3,7 @@ namespace BlazorServerApp
 open Microsoft.AspNetCore.Mvc.Rendering
 open Fun.Blazor
 
-// page or page2 is just two styles for define Bolero.Node, you can pick one or use both
+// page or page2 is just two styles for define blazor node, you can pick anyone
 // page/page2 will be called in Startup.fs
 type Index() =
     inherit FunBlazorComponent()
