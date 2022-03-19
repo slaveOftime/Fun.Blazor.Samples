@@ -21,16 +21,14 @@ let dialogDemo1 =
             IsVisible isOpen
             TitleContent "Dialog 1"
             DialogContent counter
-            DialogActions(
-                fragment {
-                    MudButton'() {
-                        Color Color.Primary
-                        Variant Variant.Filled
-                        OnClick(fun _ -> setIsOpen false)
-                        "Close"
-                    }
+            DialogActions [
+                MudButton'() {
+                    Color Color.Primary
+                    Variant Variant.Filled
+                    OnClick(fun _ -> setIsOpen false)
+                    "Close"
                 }
-            )
+            ]
         }
     }
 
@@ -39,16 +37,14 @@ let dialogForDemo2 onClose =
     MudDialog'() {
         TitleContent "Dalog 2"
         DialogContent counter
-        DialogActions(
-            fragment {
-                MudButton'() {
-                    Color Color.Primary
-                    Variant Variant.Filled
-                    OnClick(fun _ -> onClose ())
-                    "Close"
-                }
+        DialogActions [
+            MudButton'() {
+                Color Color.Primary
+                Variant Variant.Filled
+                OnClick(fun _ -> onClose ())
+                "Close"
             }
-        )
+        ]
     }
 
 

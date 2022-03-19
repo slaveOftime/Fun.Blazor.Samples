@@ -8,7 +8,7 @@ Tips:
     <PackageReference Include="MudBlazor" FunBlazorStyle="CE" Version="5.2.0" />
     ```
 
-2. dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta030
+2. dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta031
 
     If you change the version of MudBlazor you should run "fun-blazor generate" under this folder to regenerate Fun.Blazor.Bindings
 
@@ -23,4 +23,4 @@ Tips:
     Open terminal and run
     fun-blazor watch .\BlazorWASMAppWithMudBlazor.fsproj
 
-    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta030
+    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta031

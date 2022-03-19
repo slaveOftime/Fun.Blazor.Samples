@@ -5,10 +5,11 @@ Check the README.md file under each demo.
 Template is now available: [![Nuget](https://img.shields.io/nuget/v/Fun.Blazor.Templates)](https://www.nuget.org/packages/Fun.Blazor.Templates)
 
 ```shell
-dotnet new --install Fun.Blazor.Templates::2.0.0-beta016
+dotnet new --install Fun.Blazor.Templates::2.0.0-beta018
 ```
 
 External show case demos:
 
+- [Simple blog site](https://github.com/slaveOftime/Slaveoftime.Site)
 - [MyLogs](https://github.com/slaveOftime/MyLogs)
 - [IHome: raspberry pi 4 project](https://github.com/slaveOftime/IHome)

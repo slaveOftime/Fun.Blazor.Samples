@@ -13,8 +13,8 @@
     <!-- NuGet config -->
     <PackageType>Template</PackageType>
     <PackageId>Fun.Blazor.Templates</PackageId>
-    <PackageVersion>2.0.0-beta017</PackageVersion>
-    <PackageTags>templates;blazor;bolero;fun-blazor;fsharp</PackageTags>
+    <PackageVersion>2.0.0-beta018</PackageVersion>
+    <PackageTags>templates;blazor;fun-blazor;fsharp</PackageTags>
     <PackageProjectUrl>https://github.com/slaveOftime/Fun.Blazor.Samples</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/slaveOftime/Fun.Blazor.Samples</RepositoryUrl>

@@ -25,7 +25,7 @@ The reason you can get some intellisense for shoelace is because there is some m
     Open terminal and run
     fun-blazor watch .\BlazorWASMAppWithShoelace.fsproj
 
-    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta030
+    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.0.0-beta031
 
 
 ## Dev without hot-reload
