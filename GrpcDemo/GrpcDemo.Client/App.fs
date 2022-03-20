@@ -33,7 +33,7 @@ let app =
             let! msg = message
 
             div {
-                style'' { color "red" }
+                style { color "red" }
                 match msg with
                 | DeferredState.Loading -> div { "Loading from grpc service" }
                 | DeferredState.Loaded x -> div { $"Responsed from grpc service: {x}" }
