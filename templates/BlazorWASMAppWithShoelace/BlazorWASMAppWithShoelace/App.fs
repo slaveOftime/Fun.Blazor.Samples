@@ -16,18 +16,26 @@ let welcome =
 
 
 let app =
-    adaptiview () {
-        let! count, setCount = cval(1).WithSetter()
+    html.inject (fun (hook: IComponentHook, store: IShareStore) ->
+        hook.InitI18n()
 
-        Template.html $"""
-            <div class="p-10">
-                {welcome}
-                <div class="p-2 my-5 first-letter:text-2xl first-letter:text-pink-600 text-lg font-bold text-warning-600">Here is the count {count}</div>
-                <sl-button type="primary" onclick="{fun _ -> setCount (count + 1)}">Increase</sl-button>
-                <sl-range value="{count}" onsl-change="{callback (fun (e: SlChangeEventArgs) -> e.Value |> string |> int |> setCount)}"></sl-range>
-            </div>
-        """
-    }
+        adaptiview () {
+            let! i18n = store.I18n
+            let! count, setCount = cval(1).WithSetter()
+
+            Template.html $"""
+                <div class="p-10">
+                    {welcome}
+                    <h2 class="text-md text-pink-600/75 font-bold">
+                        {i18n.tran ("Title", "BlazorWASMAppWithShoelace")}
+                    </h1>
+                    <div class="p-2 my-5 first-letter:text-2xl first-letter:text-pink-600 text-lg font-bold text-warning-600">Here is the count {count}</div>
+                    <sl-button type="primary" onclick="{fun _ -> setCount (count + 1)}">Increase</sl-button>
+                    <sl-range value="{count}" onsl-change="{callback (fun (e: SlChangeEventArgs) -> e.Value |> string |> int |> setCount)}"></sl-range>
+                </div>
+            """
+        }
+    )
 
 
 let entry =

@@ -13,7 +13,7 @@
     <!-- NuGet config -->
     <PackageType>Template</PackageType>
     <PackageId>Fun.Blazor.Templates</PackageId>
-    <PackageVersion>2.0.0-beta019</PackageVersion>
+    <PackageVersion>2.0.0-beta020</PackageVersion>
     <PackageTags>templates;blazor;fun-blazor;fsharp</PackageTags>
     <PackageProjectUrl>https://github.com/slaveOftime/Fun.Blazor.Samples</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>

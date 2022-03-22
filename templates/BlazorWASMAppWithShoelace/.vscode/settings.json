@@ -11,5 +11,10 @@
     "css.validate": false,
     "editor.quickSuggestions": {
         "strings": true
-    }
+    },
+    "i18n-ally.keystyle": "flat",
+    "i18n-ally.sourceLanguage": "en-US",
+    "i18n-ally.localesPaths": [
+        "**/wwwroot/i18n",
+    ]
 }
