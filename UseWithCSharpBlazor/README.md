@@ -12,4 +12,4 @@ FSharpUI\GreatSection.fs:
     dotnet run --project .\CSharpWASMApp\CSharpWASMApp.csproj
 
 
-Of course, you can reuse csharp library in a fsharp blazor app. To do that you will need Fun.Blazor.Cli to auto generate some binding files for you. It is just similar with MinimalBlazorWASMAppWithMudBlazor.
+Of course, you can reuse csharp library in a fsharp blazor app. To do that you will need Fun.Blazor.Cli to auto generate some binding files for you. It is just similar with MinimalWASMMudBlazor.
