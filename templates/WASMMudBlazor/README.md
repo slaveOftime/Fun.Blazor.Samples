@@ -14,6 +14,7 @@ Tips:
 
 3. According to MudBlazor, you should also add related css/js resources in wwwroot/index.html
 
+4. The reason we split MudBlazor bindings into a separate project is for trimming to get smaller bundle size.  
 
 ## Dev with hot-reload
 

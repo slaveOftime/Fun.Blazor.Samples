@@ -18,4 +18,16 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\WASMMudBlazor.Controls\WASMMudBlazor.Controls.fsproj" />
 	</ItemGroup>
+	
+	<!-- If you want to add package like below to trim package which is not trimmable by default, be sure you test it carefully -->
+	<Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
+		<ItemGroup>
+			<ManagedAssemblyToLink Condition="'%(Filename)' == 'FSharp.Data'">
+				<IsTrimmable>true</IsTrimmable>
+			</ManagedAssemblyToLink>
+			<ManagedAssemblyToLink Condition="'%(Filename)' == 'MessagePack'">
+				<IsTrimmable>true</IsTrimmable>
+			</ManagedAssemblyToLink>
+		</ItemGroup>
+	</Target>
 </Project>
