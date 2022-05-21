@@ -10,7 +10,7 @@ It server both mode in different urls.
     Open terminal and run
     fun-blazor watch .\MixMode.Wasm\MixMode.Wasm.fsproj
 
-    > This required 'dotnet tool install --global Fun.Blazor.Cli --version 2.0.0'
+    > This required 'dotnet tool install --global Fun.Blazor.Cli --version 2.0.*'
     
 ## Dev without hot-reload
 

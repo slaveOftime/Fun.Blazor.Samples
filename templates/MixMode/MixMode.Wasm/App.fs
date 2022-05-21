@@ -7,7 +7,6 @@ module MixMode.Wasm.App
 
 open Microsoft.JSInterop
 open FSharp.Data.Adaptive
-open Fun.Result
 open Fun.Blazor
 open Fun.Blazor.Router
 
@@ -26,28 +25,25 @@ let private counter () =
 let private sayHi (msg: string) = h1 { "Fun.Blazor: Hi, " + msg }
 
 
-let private notfound = div { "Content is not found" }
+let private home = div { "Nice home." }
 
 
 let private modeSwitcher =
     html.comp (fun (hook: IComponentHook, jsRuntime: IJSRuntime) ->
-        let isWasm = cval LoadingState<bool>.Loading
+        let isWasm = cval Option<bool>.None
 
         hook.OnFirstAfterRender.Add(fun _ ->
-            isWasm.Publish(
-                match jsRuntime with
-                | :? IJSInProcessRuntime -> true
-                | _ -> false
-                |> LoadingState.Loaded
-            )
+            match jsRuntime with
+            | :? IJSInProcessRuntime -> true
+            | _ -> false
+            |> Some
+            |> isWasm.Publish
         )
 
         adaptiview () {
             match! isWasm with
-            | LoadingState.NotStartYet -> ()
-            | LoadingState.Loading -> div { "Loading ..." }
-            | LoadingState.Loaded isWasm
-            | LoadingState.Reloading isWasm ->
+            | None -> div { "Loading ..." }
+            | Some isWasm ->
                 a {
                     style { displayBlock }
                     href (if isWasm then "/server" else "/wasm")
@@ -75,17 +71,17 @@ let private app =
             }
             a {
                 href ""
-                "Route to nothing"
+                "Route to home"
             }
             a {
-                href "hi/MixMode"
-                "Hi MixMode"
+                href "hi/CoolMix"
+                "Hi CoolMix"
             }
         }
         html.route [
             subRouteCi "/wasm" routes
             subRouteCi "/server" routes
-            routeAny notfound
+            routeAny home
         ]
     }
 

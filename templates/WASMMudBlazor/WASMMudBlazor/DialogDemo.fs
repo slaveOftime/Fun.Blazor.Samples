@@ -34,7 +34,7 @@ let dialogDemo1 =
     }
 
 
-let dialogForDemo2 onClose =
+let dialogForDemo2 (onClose: unit -> unit) =
     MudDialog'() {
         TitleContent "Dalog 2"
         DialogContent counter

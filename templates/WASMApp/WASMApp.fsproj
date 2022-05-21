@@ -11,14 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fun.Blazor.Wasm" Version="2.0.0-beta*" />
-    <PackageReference Include="Fun.Blazor.HotReload" Version="2.0.0-beta*" />
+    <PackageReference Include="Fun.Blazor.Wasm" Version="2.0.*" />
+    <PackageReference Include="Fun.Blazor.HotReload" Version="2.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="6.0.1" />
-  </ItemGroup>
-
+  
 </Project>

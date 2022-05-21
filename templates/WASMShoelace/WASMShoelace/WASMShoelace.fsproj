@@ -13,11 +13,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fun.Blazor.Wasm" Version="2.0.0-beta*" />
-    <PackageReference Include="Fun.Blazor.HtmlTemplate" Version="2.0.0-beta*" />
-    <PackageReference Include="Fun.Blazor.HotReload" Version="2.0.0-beta*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
+    <PackageReference Include="Fun.Blazor.Wasm" Version="2.0.*" />
+    <PackageReference Include="Fun.Blazor.HtmlTemplate" Version="2.0.*" />
+    <PackageReference Include="Fun.Blazor.HotReload" Version="2.0.*" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.5" PrivateAssets="all" />
   </ItemGroup>
+
+  <Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
+    <ItemGroup>
+      <ManagedAssemblyToLink Condition="'%(Filename)' == 'FSharp.Data'">
+        <IsTrimmable>true</IsTrimmable>
+      </ManagedAssemblyToLink>
+    </ItemGroup>
+  </Target>
 
 </Project>
