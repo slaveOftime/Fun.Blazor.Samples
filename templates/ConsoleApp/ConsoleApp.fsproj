@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Utils.fs" />
+    <Compile Include="Startup.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fun.Blazor.Server" Version="2.1.*" />
+    <PackageReference Include="tailwindcss.msbuild" Version="0.0.3" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TailwindCSSReleaseBuildArguments>-i wwwroot/app.css -o wwwroot/app-generated.css --minify</TailwindCSSReleaseBuildArguments>
+    <TailwindCSSDebugBuildArguments>-i wwwroot/app.css -o wwwroot/app-generated.css</TailwindCSSDebugBuildArguments>
+  </PropertyGroup>
+
+</Project>

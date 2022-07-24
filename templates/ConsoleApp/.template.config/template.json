@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "identity": "Fun.Blazor.ConsoleApp",
+    "shortName": "fb-console",
+    "name": "Fun.Blazor.ConsoleApp",
+    "author": "slaveoftime",
+    "description": "A console app used to generate static html with tailwindcss.",
+    "classifications": [
+        "Console",
+        "F#",
+        "Static site generator",
+        "Fun.Blazor"
+    ],
+    "type": {
+        "language": "F#"
+    },
+    "tags": {
+        "type": "project",
+        "language": "F#"
+    },
+    "sourceName": "ConsoleApp",
+    "preferNameDirectory": true
+}
