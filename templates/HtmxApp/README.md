@@ -4,8 +4,7 @@ Startup.fs is for hooking up everything and configuring server. It also contains
 
 ## Dev
 
-    pnpm install 
-    pnpm run watch-css
+    Recommend to use VSCode to get tailwindcss intellicense
 
-    
+    dotnet tool restore 
     dotnet watch run
