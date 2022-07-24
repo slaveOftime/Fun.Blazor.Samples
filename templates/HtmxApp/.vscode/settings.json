@@ -1,0 +1,15 @@
+{
+    "html.customData": [
+        "./.vscode/shoelace-vscode.html-custom-data.json"
+    ],
+    "tailwindCSS.includeLanguages": {
+        "fsharp": "html"
+    },
+    "tailwindCSS.experimental.classRegex": [
+        "class'[\\s]*\"([^\n]*)\"[\\s]*\n"
+    ],
+    "css.validate": false,
+    "editor.quickSuggestions": {
+        "strings": true
+    }
+}
