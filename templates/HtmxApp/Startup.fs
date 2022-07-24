@@ -1,6 +1,7 @@
 ﻿#nowarn "0020"
 
 open System
+open System.Threading.Tasks
 open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.DependencyInjection
@@ -8,10 +9,26 @@ open Fun.Blazor
 open Fun.Htmx
 
 
+type DbContext() =
+
+    member _.GetBlogs() = task {
+        do! Task.Delay 1000
+        return [
+            for i in 1..5 do
+                {|
+                    Id = i
+                    Title = $"Blog #{i}"
+                    CreatedAt = DateTime.Now.AddDays(float i)
+                |}
+        ]
+    }
+
+
 let builder = WebApplication.CreateBuilder(Environment.GetCommandLineArgs())
 
 builder.Services.AddControllersWithViews()
 builder.Services.AddFunBlazorServer()
+builder.Services.AddTransient<DbContext>()
 
 
 let app = builder.Build()
@@ -48,18 +65,21 @@ let layout (node: NodeRenderFragment) = fragment {
 
 app.MapGet(
     "/blogs",
-    div {
-        childContent [
-            for i in [ 1..5 ] do
-                div {
-                    class' "rounded-md bg-slate-300 hover:bg-slate-600 hover:text-white hover:shadow-md mb-3 p-3 cursor-pointer"
-                    h2 { "Blog #" + string i }
-                    p {
-                        class' "text-sm"
-                        DateTime.Now.ToString("yyy-MM-dd HH:mm:ss")
+    fun (db: DbContext) -> task {
+        let! blogs = db.GetBlogs()
+        return div {
+            childContent [
+                for blog in blogs do
+                    div {
+                        class' "rounded-md bg-slate-300 hover:bg-slate-600 hover:text-white hover:shadow-md mb-3 p-3 cursor-pointer"
+                        h2 { blog.Title }
+                        p {
+                            class' "text-sm"
+                            blog.CreatedAt.ToString("yyy-MM-dd HH:mm:ss")
+                        }
                     }
-                }
-        ]
+            ]
+        }
     }
 )
 
@@ -73,8 +93,8 @@ app.MapGet(
                 hxSwap_innerHTML
                 hxTarget "#blogs"
                 hxIndicator "#blogs_loader"
-                hxTrigger' (hxEvt.load, delayMs = 3000)
-                "Below is my demo blogs (will delay 3000)"
+                hxTrigger' (hxEvt.load, delayMs = 1000)
+                "Below is my demo blogs"
             }
             div {
                 id "blogs_loader"
