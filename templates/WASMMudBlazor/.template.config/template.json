@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "identity": "Fun.Blazor.WASMMudBlazor",
-    "shortName": "fb-wasm-mudblazor",
+    "shortName": "fb-wasm-mud",
     "name": "Fun.Blazor.WASMMudBlazor",
     "author": "slaveoftime",
     "classifications": [

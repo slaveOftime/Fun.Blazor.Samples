@@ -1,9 +1,10 @@
 ﻿[<AutoOpen>]
 module WASMMudBlazor.Controls.Dialogs
 
+open System.Diagnostics.CodeAnalysis
+open Microsoft.AspNetCore.Components
 open Fun.Blazor
 open MudBlazor
-open Microsoft.AspNetCore.Components
 
 
 type FunDialogProps = { Close: unit -> unit; Options: DialogOptions }
@@ -42,6 +43,7 @@ type FunDialog() =
 
 type IDialogService with
 
+    [<DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof<FunDialog>)>]
     member this.Show(title, render: FunDialogProps -> NodeRenderFragment, ?options) =
         let options = options |> Option.defaultWith (fun _ -> DialogOptions())
         let parameters = DialogParameters()

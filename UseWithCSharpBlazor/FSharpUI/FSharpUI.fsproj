@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fun.Blazor" Version="2.0.*" />
+    <PackageReference Include="Fun.Blazor" Version="2.1.*" />
   </ItemGroup>
 
   <ItemGroup>
