@@ -6,20 +6,12 @@ open Falco.Markup
 open Falco.Routing
 open Falco.HostBuilder
 open Fun.Blazor
-open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.DependencyInjection
 
 
 module Response =
 
     let ofFunHtml node : HttpHandler = fun ctx -> ctx.WriteFunDom node
-
-
-// ------------
-// Exception Handler
-// ------------
-let exceptionHandler: HttpHandler = Response.withStatusCode 500 >> Response.ofPlainText "Server error"
-
 
 
 let falcoForm =
