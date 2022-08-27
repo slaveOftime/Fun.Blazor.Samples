@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "FalcoDemo": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:62162;http://localhost:62163"
+    }
+  }
+}
