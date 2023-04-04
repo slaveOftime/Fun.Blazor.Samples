@@ -1,24 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 	</PropertyGroup>
+	
 	<ItemGroup>
 		<Compile Include="Counter.fs" />
 		<Compile Include="DialogDemo.fs" />
 		<Compile Include="App.fs" />
 		<Compile Include="Startup.fs" />
 	</ItemGroup>
+	
 	<ItemGroup>
-		<PackageReference Include="Fun.Blazor.Wasm" Version="2.1.*" />
-		<PackageReference Include="Fun.Blazor.HotReload" Version="2.1.*" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
-	</ItemGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\WASMMudBlazor.Controls\WASMMudBlazor.Controls.fsproj" />
+		<PackageReference Include="Fun.Blazor.Wasm" Version="3.0.*" />
+		<PackageReference Include="Fun.Blazor.HotReload" Version="3.0.*" Condition="'$(Configuration)'=='DEBUG'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.3" PrivateAssets="all" />
 	</ItemGroup>
 	
+	<ItemGroup>
+		<ProjectReference Include="..\WASMMudBlazor.Controls\WASMMudBlazor.Controls.fsproj" />
+	</ItemGroup>
+
 	<!-- If you want to add package like below to trim package which is not trimmable by default, be sure you test it carefully -->
 	<Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
 		<ItemGroup>

@@ -15,4 +15,4 @@ Startup.fs is for hooking up everything and configuring server
     Open terminal and run
     fun-blazor watch .\WASMApp.fsproj 
 
-    > dotnet tool install --global Fun.Blazor.Cli --version 2.1.*
+    > dotnet tool install --global Fun.Blazor.Cli

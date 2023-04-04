@@ -24,4 +24,4 @@ Tips:
     Open terminal and run
     fun-blazor watch .\WASMMudBlazor\WASMMudBlazor.fsproj
 
-    > require: dotnet tool install --global Fun.Blazor.Cli --version 2.1.*
+    > require: dotnet tool install --global Fun.Blazor.Cli

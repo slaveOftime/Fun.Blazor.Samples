@@ -1,28 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <!-- General info -->
-    <Description>dotnet templates for Fun.Blazor</Description>
+    <PropertyGroup>
+        <!-- General info -->
+        <Description>dotnet templates for Fun.Blazor</Description>
 
-    <!-- Build config -->
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <IncludeContentInPack>true</IncludeContentInPack>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <ContentTargetFolders>content</ContentTargetFolders>
+        <!-- Build config -->
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
 
-    <!-- NuGet config -->
-    <PackageType>Template</PackageType>
-    <PackageId>Fun.Blazor.Templates</PackageId>
-    <PackageVersion>2.0.4</PackageVersion>
-    <PackageTags>templates;blazor;fun-blazor;fsharp</PackageTags>
-    <PackageProjectUrl>https://github.com/slaveOftime/Fun.Blazor.Samples</PackageProjectUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/slaveOftime/Fun.Blazor.Samples</RepositoryUrl>
-  </PropertyGroup>
+        <!-- NuGet config -->
+        <PackageType>Template</PackageType>
+        <PackageId>Fun.Blazor.Templates</PackageId>
+        <PackageVersion>3.0.0-beta1</PackageVersion>
+        <PackageTags>templates;blazor;fun-blazor;fsharp</PackageTags>
+        <PackageProjectUrl>https://github.com/slaveOftime/Fun.Blazor.Samples</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/slaveOftime/Fun.Blazor.Samples</RepositoryUrl>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
-    <Compile Remove="**\*" />
-  </ItemGroup>
+    <ItemGroup>
+        <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+        <Compile Remove="**\*" />
+    </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -9,16 +9,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Grpc.AspNetCore.Server" Version="2.41.0" />
-	  <PackageReference Include="Grpc.AspNetCore.Web" Version="2.41.0" />
+	  <PackageReference Include="Grpc.AspNetCore.Server" Version="2.52.0" />
+	  <PackageReference Include="Grpc.AspNetCore.Web" Version="2.52.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\GrpcDemo.Protos\GrpcDemo.Protos.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Update="FSharp.Core" Version="6.0.1" />
 	</ItemGroup>
 
 </Project>

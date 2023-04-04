@@ -1,20 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net7.0</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="App.fs" />
-    <Compile Include="Startup.fs" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Include="App.fs" />
+		<Compile Include="Startup.fs" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Fun.Blazor.Wasm" Version="2.1.*" />
-    <PackageReference Include="Fun.Blazor.HotReload" Version="2.1.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
-  </ItemGroup>
-  
+	<ItemGroup>
+		<PackageReference Include="Fun.Blazor.Wasm" Version="3.0.*" />
+		<PackageReference Include="Fun.Blazor.HotReload" Version="3.0.*" Condition="'$(Configuration)'=='DEBUG'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.3" PrivateAssets="all" />
+	</ItemGroup>
+
 </Project>
