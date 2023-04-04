@@ -15,4 +15,14 @@
 		<PackageReference Include="Fun.Blazor.Server" Version="3.0.*" />
 	</ItemGroup>
 
+	<!-- In dotnet 7 there is a bug for Fun.Blazor.Cli to do hot reload.
+    Below is the workaround. https://github.com/dotnet/fsharp/issues/14250 -->
+    <Target Name="ShimReferencePathsWhenCommonTargetsDoesNotUnderstandReferenceAssemblies"
+			BeforeTargets="CoreCompile"
+			Condition="'@(ReferencePathWithRefAssemblies)' == ''">
+        <ItemGroup>
+            <ReferencePathWithRefAssemblies Include="@(ReferencePath)" />
+        </ItemGroup>
+    </Target>
+
 </Project>
