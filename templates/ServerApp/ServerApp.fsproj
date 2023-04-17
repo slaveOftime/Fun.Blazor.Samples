@@ -19,7 +19,7 @@
     Below is the workaround. https://github.com/dotnet/fsharp/issues/14250 -->
     <Target Name="ShimReferencePathsWhenCommonTargetsDoesNotUnderstandReferenceAssemblies"
 			BeforeTargets="CoreCompile"
-			Condition="'@(ReferencePathWithRefAssemblies)' == ''">
+			Condition="'$(Configuration)' == 'DEBUG'">
         <ItemGroup>
             <ReferencePathWithRefAssemblies Include="@(ReferencePath)" />
         </ItemGroup>
