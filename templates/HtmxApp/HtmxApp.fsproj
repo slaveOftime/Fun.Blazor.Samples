@@ -9,7 +9,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Fun.AspNetCore.Blazor" Version="0.1.1" />
+		<PackageReference Include="Fun.AspNetCore.Blazor" Version="0.1.2" />
 		<PackageReference Include="Fun.Htmx" Version="3.0.0" />
 		<PackageReference Include="tailwindcss.msbuild" Version="0.0.3" />
 	</ItemGroup>

@@ -66,24 +66,24 @@ let layout (node: NodeRenderFragment) = fragment {
 
 
 app.MapGroup(endpoints "" {
+    enableFunBlazor
+    
     get "/blogs" {
         handle (fun (db: DbContext) -> task {
             let! blogs = db.GetBlogs()
-            return 
-                div {
-                    childContent [
-                        for blog in blogs do
-                            div {
-                                class' "rounded-md bg-slate-300 hover:bg-slate-600 hover:text-white hover:shadow-md mb-3 p-3 cursor-pointer"
-                                h2 { blog.Title }
-                                p {
-                                    class' "text-sm"
-                                    blog.CreatedAt.ToString("yyy-MM-dd HH:mm:ss")
-                                }
+            return div {
+                childContent [
+                    for blog in blogs do
+                        div {
+                            class' "rounded-md bg-slate-300 hover:bg-slate-600 hover:text-white hover:shadow-md mb-3 p-3 cursor-pointer"
+                            h2 { blog.Title }
+                            p {
+                                class' "text-sm"
+                                blog.CreatedAt.ToString("yyy-MM-dd HH:mm:ss")
                             }
-                    ]
-                }
-                |> Results.View
+                        }
+                ]
+            }
         })
     }
 
