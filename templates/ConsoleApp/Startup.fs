@@ -1,6 +1,27 @@
 ﻿open System.IO
-open Fun.Result
+open Microsoft.AspNetCore.Components
+open Microsoft.AspNetCore.Components.Web
+open Microsoft.Extensions.Logging
+open Microsoft.Extensions.DependencyInjection
 open Fun.Blazor
+open Fun.Result
+
+
+let writeHtmlTo file (node: NodeRenderFragment) = task {
+    let serviceProvider = 
+        (new ServiceCollection())
+            .AddLogging()
+            .BuildServiceProvider()
+
+    let loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>()
+    use htmlRenderer = new HtmlRenderer(serviceProvider, loggerFactory)
+
+    do! htmlRenderer.Dispatcher.InvokeAsync<unit>(fun () -> task {
+        let ps = ParameterView.FromDictionary(dict [ "Fragment", box node ])
+        let! output = htmlRenderer.RenderComponentAsync<FunFragmentComponent>(ps)
+        do! File.WriteAllTextAsync(file, output.ToHtmlString())
+    })
+}
 
 
 html' {
