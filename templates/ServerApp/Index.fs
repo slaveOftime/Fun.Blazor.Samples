@@ -1,7 +1,7 @@
 namespace ServerApp
 
-open Microsoft.AspNetCore.Mvc.Rendering
 open Fun.Blazor
+open Microsoft.AspNetCore.Components.Web
 
 
 type Index() =
@@ -30,8 +30,8 @@ type Index() =
                     }
                 }
                 body {
-                    rootComp<Index> ctx RenderMode.ServerPrerendered
-                    script { src "_framework/blazor.server.js" }
+                    html.blazor<Index> RenderMode.InteractiveServer
+                    script { src "_framework/blazor.web.js" }
 //-:cnd:noEmit
 #if DEBUG
                     html.hotReloadJSInterop

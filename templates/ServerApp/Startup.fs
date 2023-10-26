@@ -8,15 +8,15 @@ open Microsoft.Extensions.DependencyInjection
 
 let builder = WebApplication.CreateBuilder(Environment.GetCommandLineArgs())
 
-builder.Services.AddControllersWithViews()
-builder.Services.AddServerSideBlazor().Services.AddFunBlazorServer()
+builder.Services.AddRazorComponents().AddInteractiveServerComponents()
+builder.Services.AddFunBlazorServer()
 
 
 let app = builder.Build()
 
 app.UseStaticFiles()
 
-app.MapBlazorHub()
+app.MapRazorComponents().AddInteractiveServerRenderMode()
 app.MapFunBlazor(ServerApp.Index.page)
 
 app.Run()
