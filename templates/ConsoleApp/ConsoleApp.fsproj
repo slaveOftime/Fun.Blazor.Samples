@@ -10,9 +10,9 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Fun.Blazor.Server" Version="3.1.0-beta*" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-rc.2.23480.2" />
-		<PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0-rc.2.23479.6" />
+		<PackageReference Include="Fun.Blazor.Server" Version="3.1.0-*" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-*" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0-*" />
 		<PackageReference Include="tailwindcss.msbuild" Version="0.0.3" />
 	</ItemGroup>
 	

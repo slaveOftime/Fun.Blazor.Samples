@@ -12,7 +12,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Fun.Htmx" Version="3.1.0-beta*" />
+		<PackageReference Include="Fun.Htmx" Version="3.1.0-*" />
 		<PackageReference Include="tailwindcss.msbuild" Version="0.0.3" />
 	</ItemGroup>
 	
