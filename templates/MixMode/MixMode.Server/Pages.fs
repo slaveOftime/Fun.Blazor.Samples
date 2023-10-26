@@ -1,6 +1,8 @@
 namespace MixMode.Server
 
+open Microsoft.AspNetCore.Http
 open Microsoft.AspNetCore.Mvc.Rendering
+open Microsoft.AspNetCore.Components.Web
 open Fun.Blazor
 
 
@@ -21,14 +23,13 @@ type PageMode =
 
 module Pages =
 
-    let create (mode: PageMode) ctx =
-        let rootView = rootComp<MixMode.Wasm.App.AppComp> ctx mode.RenderMode
+    let create (mode: PageMode) (_: HttpContext) =
 
         let blazorJs =
             fragment {
                 match mode with
                 | SERVER -> script { src "/_framework/blazor.server.js" }
-                | WASM _ -> script { src "_framework/blazor.webassembly.js" }
+                | WASM -> script { src "_framework/blazor.webassembly.js" }
 //-:cnd:noEmit
 #if DEBUG
                 html.hotReloadJSInterop
@@ -54,7 +55,10 @@ module Pages =
                     baseUrl $"/{mode.UrlPath}/"
                 }
                 body {
-                    rootView
+                    
+                    match mode with
+                    | PageMode.SERVER -> html.blazor<MixMode.Wasm.App.AppComp>(RenderMode.InteractiveServer)
+                    | PageMode.WASM -> html.blazor<MixMode.Wasm.App.AppComp>(RenderMode.InteractiveWebAssembly)
                     blazorJs
                 }
             }

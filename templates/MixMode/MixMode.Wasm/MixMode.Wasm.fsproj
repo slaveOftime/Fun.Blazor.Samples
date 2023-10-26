@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 
 		<!--This should be synced with the url page defined in MixMode.Server/Pages.fs-->
 		<StaticWebAssetBasePath>wasm</StaticWebAssetBasePath>
@@ -14,13 +14,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Fun.Blazor.Wasm" Version="3.0.*" />
-		<PackageReference Include="Fun.Blazor.HotReload" Version="3.0.*" Condition="'$(Configuration)'=='DEBUG'" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.3" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.3" PrivateAssets="all" />
+		<PackageReference Include="Fun.Blazor.Wasm" Version="3.1.0-*" />
+		<PackageReference Include="Fun.Blazor.HotReload" Version="3.1.0-*" Condition="'$(Configuration)'=='DEBUG'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0-*" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0-*" PrivateAssets="all" />
 	</ItemGroup>
 
-	<!-- In dotnet 7 there is a bug for Fun.Blazor.Cli to do hot reload.
+	<!-- Above dotnet 7 there is a bug for Fun.Blazor.Cli to do hot reload.
     Below is the workaround. https://github.com/dotnet/fsharp/issues/14250 -->
     <Target Name="ShimReferencePathsWhenCommonTargetsDoesNotUnderstandReferenceAssemblies"
 			BeforeTargets="CoreCompile"

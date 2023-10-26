@@ -12,8 +12,10 @@ open MixMode.Server
 let builder = WebApplication.CreateBuilder(Environment.GetCommandLineArgs())
 let services = builder.Services
 
-services.AddControllersWithViews()
-services.AddServerSideBlazor()
+services.AddRazorComponents()
+    .AddInteractiveServerComponents()
+    .AddInteractiveWebAssemblyComponents()
+
 services.AddFunBlazorServer()
 
 
@@ -23,6 +25,10 @@ let app = builder.Build()
 app.UseBlazorFrameworkFiles($"/{WASM.UrlPath}")
 app.UseStaticFiles()
 
+app.MapRazorComponents()
+    .AddInteractiveServerRenderMode()
+    .AddInteractiveWebAssemblyRenderMode()
+    
 app.MapBlazorHub($"/{SERVER.UrlPath}/_blazor")
 app.MapFunBlazor($"/{SERVER.UrlPath}", Pages.create PageMode.SERVER)
 app.MapFunBlazor($"/{WASM.UrlPath}", Pages.create PageMode.WASM)
