@@ -1,20 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
-	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
-		<TrimMode>link</TrimMode>
-		<IsTrimmable>true</IsTrimmable>
-	</PropertyGroup>
-	
-	<ItemGroup>
-		<Compile Include="Fun.Blazor.Bindings\MudBlazor.fs" />
-	</ItemGroup>
-	
-	<ItemGroup>
-		<Compile Include="Dialogs.fs" />
-	</ItemGroup>
-	
-	<ItemGroup>
-		<PackageReference Include="Fun.Blazor" Version="3.0.*" />
-		<PackageReference Include="MudBlazor" FunBlazorStyle="CE" Version="6.2.0" />
-	</ItemGroup>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TrimMode>link</TrimMode>
+    <IsTrimmable>true</IsTrimmable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Fun.Blazor.Bindings\MudBlazor.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialogs.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fun.Blazor" Version="3.1.0-*" />
+    <PackageReference Include="MudBlazor" FunBlazorStyle="CE" Version="6.11.0" />
+  </ItemGroup>
 </Project>

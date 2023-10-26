@@ -5,7 +5,7 @@ Tips:
     It required MudBlazor. Also has attribute FunBlazorStyle.
 
     ```
-    <PackageReference Include="MudBlazor" FunBlazorStyle="CE" Version="6.2.0" />
+    <PackageReference Include="MudBlazor" FunBlazorStyle="CE" Version="6.11.0" />
     ```
 
 2. dotnet tool install --global Fun.Blazor.Cli*
