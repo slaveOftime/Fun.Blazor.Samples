@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<Compile Include="Components/Layout/NavMenu.fs" />
+		<Compile Include="Components/Layout/MainLayout.fs" />
+		<Compile Include="Components/Pages/Home.fs" />
+		<Compile Include="Components/Pages/Counter.fs" />
+		<Compile Include="Components/Routes.fs" />
+		<Compile Include="Components/App.fs" />
+		<Compile Include="Startup.fs" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Fun.Blazor.HotReload" Version="3.1.0-*" Condition="'$(Configuration)'=='DEBUG'" />
+		<PackageReference Include="Fun.Blazor.Server" Version="3.1.0-*" />
+	</ItemGroup>
+
+	<!-- Above dotnet 7 there is a bug for Fun.Blazor.Cli to do hot reload.
+    Below is the workaround. https://github.com/dotnet/fsharp/issues/14250 -->
+    <Target Name="ShimReferencePathsWhenCommonTargetsDoesNotUnderstandReferenceAssemblies"
+			BeforeTargets="CoreCompile"
+			Condition="'$(Configuration)' == 'DEBUG'">
+        <ItemGroup>
+            <ReferencePathWithRefAssemblies Include="@(ReferencePath)" />
+        </ItemGroup>
+    </Target>
+
+</Project>
