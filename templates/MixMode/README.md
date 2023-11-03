@@ -15,3 +15,9 @@ It server both mode in different urls.
 ## Dev without hot-reload
 
     dotnet watch run
+
+## Update Fun.Blazor.Bindings
+
+    fun-blazor generate .\BlazorApp.fsproj
+
+> This required 'dotnet tool install --global Fun.Blazor.Cli'

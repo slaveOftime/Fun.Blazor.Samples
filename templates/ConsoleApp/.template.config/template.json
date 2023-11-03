@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "identity": "Fun.Blazor.ConsoleApp",
-    "shortName": "fb-console",
+    "shortName": "fun-console",
     "name": "Fun.Blazor.ConsoleApp",
     "author": "slaveoftime",
     "description": "A console app used to generate static html with tailwindcss.",

@@ -15,3 +15,9 @@ Startup.fs is the entry file.
     dotnet run -c Release
 
     index.html file will be generated into wwwroot folder, css will be inlined.
+
+## Update Fun.Blazor.Bindings
+
+    fun-blazor generate .\BlazorApp.fsproj
+
+> This required 'dotnet tool install --global Fun.Blazor.Cli'

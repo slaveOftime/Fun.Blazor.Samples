@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "identity": "Fun.Blazor.HtmxApp",
-    "shortName": "fb-htmx",
+    "shortName": "fun-htmx",
     "name": "Fun.Blazor.HtmxApp",
     "author": "slaveoftime",
     "classifications": [

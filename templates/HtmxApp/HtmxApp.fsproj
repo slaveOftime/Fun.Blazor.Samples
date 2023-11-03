@@ -5,6 +5,11 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
+		<Compile Include="Fun.Blazor.Bindings\Microsoft.AspNetCore.Components.Authorization.fs" />
+		<Compile Include="Fun.Blazor.Bindings\Microsoft.AspNetCore.Components.fs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Compile Include="DbContext.fs" />
 		<Compile Include="Layout.fs" />
 		<Compile Include="Blogs.fs" />
@@ -14,6 +19,8 @@
 	<ItemGroup>
 		<PackageReference Include="Fun.Htmx" Version="3.1.0-*" />
 		<PackageReference Include="tailwindcss.msbuild" Version="0.0.3" />
+		<PackageReference FunBlazorStyle="CE" Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.0-*" />
+    	<PackageReference FunBlazorStyle="CE" FunBlazorNamespace="Microsoft.AspNetCore.Components" Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-*" />
 	</ItemGroup>
 	
 	<PropertyGroup>

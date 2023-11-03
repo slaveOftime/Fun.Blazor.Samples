@@ -20,3 +20,9 @@ Startup.fs is for hooking up everything and configuring server
 ## Dev without hot-reload
 
     dotnet watch run
+
+## Update Fun.Blazor.Bindings
+
+    fun-blazor generate .\BlazorApp.fsproj
+
+> This required 'dotnet tool install --global Fun.Blazor.Cli'

@@ -6,6 +6,8 @@
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
   <ItemGroup>
+		<Compile Include="Fun.Blazor.Bindings\Microsoft.AspNetCore.Components.Authorization.fs" />
+		<Compile Include="Fun.Blazor.Bindings\Microsoft.AspNetCore.Components.fs" />
     <Compile Include="Fun.Blazor.Bindings\MudBlazor.fs" />
   </ItemGroup>
   <ItemGroup>
@@ -13,6 +15,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fun.Blazor" Version="3.1.0-*" />
+    <PackageReference FunBlazorStyle="CE" Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.0-*" />
+    <PackageReference FunBlazorStyle="CE" FunBlazorNamespace="Microsoft.AspNetCore.Components" Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-*" />
     <PackageReference Include="MudBlazor" FunBlazorStyle="CE" Version="6.11.0" />
   </ItemGroup>
 </Project>
