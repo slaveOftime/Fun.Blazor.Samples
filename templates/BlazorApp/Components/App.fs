@@ -9,11 +9,12 @@ open Microsoft.AspNetCore.Components.Web
 
 
 type App() =
-    inherit FunBlazorComponent()
+    inherit FunComponent()
 
     override _.Render() = fragment {
         doctype "html"
         html' {
+            lang "EN"
             head {
                 title { "BlazorApp" }
                 baseUrl "/"
@@ -22,18 +23,16 @@ type App() =
                     name "viewport"
                     content "width=device-width, initial-scale=1.0"
                 }
-                stylesheet "https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
                 link {
                     rel "icon"
                     type' "image/png"
                     href "favicon.png"
                 }
-                html.blazor<HeadOutlet> ()
+                HeadOutlet'()
             }
             body {
-                html.blazor<Routes> RenderMode.InteractiveServer
+                html.blazor<Routes>()
                 script { src "_framework/blazor.web.js" }
-                script { src "https://cdn.tailwindcss.com" }
 //-:cnd:noEmit
 #if DEBUG
                 html.hotReloadJSInterop

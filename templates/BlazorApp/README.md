@@ -1,22 +1,25 @@
-This is a server side blazor app
-
-App.fs contains UI logic
-
-Index.fs is for creating the index template. You can think it as index.html
-
-Startup.fs is for hooking up everything and configuring server
+This project is trying to follow the default blazor official template
 
 
 ## Dev with hot-reload
 
-    Open terminal and run
+Open terminal and run
+    
     dotnet run
 
-    Open terminal and run
+Open terminal and run
+
     fun-blazor watch .\BlazorApp.fsproj
 
-    > This required 'dotnet tool install --global Fun.Blazor.Cli'
+> This required 'dotnet tool install --global Fun.Blazor.Cli'
     
 ## Dev without hot-reload
 
     dotnet watch run
+
+## Update Fun.Blazor.Bindings
+
+    fun-blazor generate .\BlazorApp.fsproj
+
+> This required 'dotnet tool install --global Fun.Blazor.Cli'
+    

@@ -6,21 +6,17 @@ open Fun.Blazor
 
 [<Route "/counter">]
 [<RenderModeInteractiveServer>]
-type Counter() as this =
-    inherit FunBlazorComponent()
+type Counter() =
+    inherit FunComponent()
 
     let mutable count = 0
 
-    do this.DisableEventTriggerStateHasChanged <- false
-
     override _.Render() = fragment {
+        PageTitle'() { "Counter" }
         h1 { "Counter" }
-        p {
-            "role", "status"
-            $"Current count: {count}"
-        }
+        p { $"Current count: {count}" }
         button {
-            class' "btn btn-primary"
+            style { color "green" }
             onclick (fun _ -> count <- count + 1)
             "Click me"
         }
