@@ -8,7 +8,7 @@ type MainLayout() as this =
 
     let content = div {
         html.blazor<NavMenu> ()
-        main { html.renderFragment this.Body }
+        main { this.Body }
     }
 
     override _.BuildRenderTree(builder) = content.Invoke(this, builder, 0) |> ignore

@@ -28,16 +28,11 @@ type App() =
                     type' "image/png"
                     href "favicon.png"
                 }
-                HeadOutlet'()
+                HeadOutlet'() { renderMode RenderMode.InteractiveServer }
             }
             body {
-                html.blazor<Routes>()
+                html.blazor<Routes> ()
                 script { src "_framework/blazor.web.js" }
-//-:cnd:noEmit
-#if DEBUG
-                html.hotReloadJSInterop
-#endif
-//+:cnd:noEmit
             }
         }
     }

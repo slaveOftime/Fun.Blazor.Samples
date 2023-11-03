@@ -1,8 +1,6 @@
 namespace BlazorApp.Components
 
-open System
 open System.Reflection
-open Microsoft.AspNetCore.Components.Routing
 open Fun.Blazor
 open BlazorApp.Components.Layout
 
