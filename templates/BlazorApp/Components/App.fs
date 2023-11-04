@@ -16,7 +16,6 @@ type App() =
         html' {
             lang "EN"
             head {
-                title { "BlazorApp" }
                 baseUrl "/"
                 meta { charset "utf-8" }
                 meta {
@@ -28,7 +27,7 @@ type App() =
                     type' "image/png"
                     href "favicon.png"
                 }
-                HeadOutlet'() { renderMode RenderMode.InteractiveServer }
+                HeadOutlet'()
             }
             body {
                 html.blazor<Routes> ()

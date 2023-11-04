@@ -9,10 +9,8 @@ type Routes() =
 
     override _.Render() = Router'() {
         AppAssembly(Assembly.GetExecutingAssembly())
-        Found(fun routeData -> fragment {
-            RouteView'() {
-                RouteData routeData
-                DefaultLayout typeof<MainLayout>
-            }
+        Found(fun routeData -> RouteView'() {
+            RouteData routeData
+            DefaultLayout typeof<MainLayout>
         })
     }
