@@ -3,10 +3,8 @@ namespace BlazorApp.Components.Layout
 open Microsoft.AspNetCore.Components.Routing
 open Fun.Blazor
 
-type NavMenu() =
-    inherit FunBlazorComponent()
-
-    override _.Render() = nav {
+type NavMenu =
+    static member Create() = nav {
         style {
             displayFlex
             alignItemsCenter

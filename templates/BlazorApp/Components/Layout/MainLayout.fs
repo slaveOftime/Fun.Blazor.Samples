@@ -7,7 +7,7 @@ type MainLayout() as this =
     inherit LayoutComponentBase()
 
     let content = div {
-        html.blazor<NavMenu> ()
+        NavMenu.Create()
         main { this.Body }
     }
 
