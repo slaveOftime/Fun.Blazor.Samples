@@ -3,28 +3,24 @@
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<Compile Include="Fun.Blazor.Bindings\Microsoft.AspNetCore.Components.Authorization.fs" />
-		<Compile Include="Fun.Blazor.Bindings\Microsoft.AspNetCore.Components.fs" />
-	</ItemGroup>
 	
 	<ItemGroup>
 		<Compile Include="Components/Layout/NavMenu.fs" />
 		<Compile Include="Components/Layout/MainLayout.fs" />
 		<Compile Include="Components/Pages/Home.fs" />
 		<Compile Include="Components/Pages/Counter.fs" />
+		<Compile Include="Components/Pages/From.fs" />
 		<Compile Include="Components/Routes.fs" />
 		<Compile Include="Components/App.fs" />
 		<Compile Include="Startup.fs" />
 	</ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference FunBlazorStyle="CE" Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.0-*" />
-    	<PackageReference FunBlazorStyle="CE" FunBlazorNamespace="Microsoft.AspNetCore.Components" Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-*" />
-		<PackageReference Include="Fun.Blazor.HotReload" Version="3.1.0-*" Condition="'$(Configuration)'=='DEBUG'" />
-		<PackageReference Include="Fun.Blazor.Server" Version="3.1.0-*" />
-		<PackageReference Include="Fun.Blazor" Version="3.1.0-*" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="8.0.0" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="8.0.0" />
+		<PackageReference Include="Fun.Blazor.HotReload" Version="3.1.*" Condition="'$(Configuration)'=='DEBUG'" />
+		<PackageReference Include="Fun.Blazor.Server" Version="3.1.*" />
+		<PackageReference Include="Fun.Blazor" Version="3.1.*" />
 	</ItemGroup>
 
 </Project>

@@ -8,6 +8,7 @@ type MainLayout() as this =
 
     let content = div {
         NavMenu.Create()
+        SectionOutlet'() { SectionName "header" }
         main { this.Body }
     }
 

@@ -10,7 +10,7 @@ let builder = WebAssemblyHostBuilder.CreateDefault(Environment.GetCommandLineArg
 
 //-:cnd:noEmit
 #if DEBUG
-builder.AddFunBlazor("#app", html.hotReloadComp(app, "WASMApp.App.app"))
+builder.AddFunBlazor("#app", app) //html.hotReloadComp(app, "WASMApp.App.app"))
 #else
 builder.AddFunBlazor("#app", app)
 #endif

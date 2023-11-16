@@ -5,7 +5,7 @@ open Microsoft.AspNetCore.Components.Web
 open Fun.Blazor
 
 [<Route "/counter">]
-[<RenderModeInteractiveServer>]
+[<FunInteractiveServer>]
 type Counter() =
     inherit FunComponent()
 
@@ -13,7 +13,10 @@ type Counter() =
 
     override _.Render() = fragment {
         PageTitle'() { "Counter" }
-        h1 { "Counter" }
+        SectionContent'() {
+            SectionName "header"
+            h1 { "Counter" }
+        }
         p { $"Current count: {count}" }
         button {
             style { color "green" }

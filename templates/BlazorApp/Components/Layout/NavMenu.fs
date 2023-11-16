@@ -19,4 +19,8 @@ type NavMenu =
             href "counter"
             "Counter"
         }
+        NavLink'() {
+            href "form"
+            "Form demo"
+        }
     }

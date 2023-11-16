@@ -1,14 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
 	<PropertyGroup>
-		<OutputType>Exe</OutputType>
 		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<Compile Include="Fun.Blazor.Bindings\Microsoft.AspNetCore.Components.Authorization.fs" />
-		<Compile Include="Fun.Blazor.Bindings\Microsoft.AspNetCore.Components.fs" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<Compile Include="App.fs" />
@@ -16,22 +10,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Fun.Blazor.Wasm" Version="3.1.0-*" />
-		<PackageReference Include="Fun.Blazor.HotReload" Version="3.1.0-*" Condition="'$(Configuration)' == 'DEBUG'" />
-		<PackageReference FunBlazorStyle="CE" Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.0-*" />
-    	<PackageReference FunBlazorStyle="CE" FunBlazorNamespace="Microsoft.AspNetCore.Components" Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-*" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0-*" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0-*" PrivateAssets="all" />
+		<PackageReference Include="Fun.Blazor.Wasm" Version="3.1.*" />
+		<PackageReference Include="Fun.Blazor.HotReload" Version="3.1.*" Condition="'$(Configuration)' == 'DEBUG'" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="8.0.0" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
 	</ItemGroup>
 
 	<!-- In dotnet 7 there is a bug for Fun.Blazor.Cli to do hot reload.
-    Below is the workaround. https://github.com/dotnet/fsharp/issues/14250 -->
-	<Target Name="ShimReferencePathsWhenCommonTargetsDoesNotUnderstandReferenceAssemblies"
-			BeforeTargets="CoreCompile"
-			Condition="'$(Configuration)' == 'DEBUG'">
+    Below is the workaround. https://github.com/dotnet/fsharp/issues/14250 --><!--
+	<Target Name="ShimReferencePathsWhenCommonTargetsDoesNotUnderstandReferenceAssemblies" BeforeTargets="CoreCompile" Condition="'$(Configuration)' == 'DEBUG'">
 		<ItemGroup>
 			<ReferencePathWithRefAssemblies Include="@(ReferencePath)" />
 		</ItemGroup>
-	</Target>
+	</Target>-->
 
 </Project>
