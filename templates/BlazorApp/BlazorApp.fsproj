@@ -18,9 +18,9 @@
 	<ItemGroup>
 		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="8.0.0" />
 		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="8.0.0" />
-		<PackageReference Include="Fun.Blazor.HotReload" Version="3.1.*" Condition="'$(Configuration)'=='DEBUG'" />
-		<PackageReference Include="Fun.Blazor.Server" Version="3.1.*" />
-		<PackageReference Include="Fun.Blazor" Version="3.1.*" />
+		<PackageReference Include="Fun.Blazor.HotReload" Version="3.2.*" Condition="'$(Configuration)'=='DEBUG'" />
+		<PackageReference Include="Fun.Blazor.Server" Version="3.2.*" />
+		<PackageReference Include="Fun.Blazor" Version="3.2.*" />
 	</ItemGroup>
 
 </Project>
