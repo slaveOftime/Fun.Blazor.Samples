@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<Compile Include="View/Components/Login.fs" />
+		<Compile Include="View/Components/Counter.fs" />
+		<Compile Include="View/Components/OrderList.fs" />
+		<Compile Include="View/Layout/NavMenu.fs" />
+		<Compile Include="View/Layout/MainLayout.fs" />
+		<Compile Include="View/Pages/HomePage.fs" />
+		<Compile Include="View/Pages/CounterPage.fs" />
+		<Compile Include="View/Pages/FromPage.fs" />
+		<Compile Include="View/Routes.fs" />
+		<Compile Include="View/App.fs" />
+		<Compile Include="Startup.fs" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="8.0.0" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="8.0.0" />
+		<PackageReference Include="Fun.Htmx" Version="3.2.*" />
+		<PackageReference Include="Fun.Blazor" Version="3.2.*" />
+		<PackageReference Include="Fun.Blazor.Server" Version="3.2.*" />
+		<PackageReference Include="Fun.Blazor.CustomElements" Version="3.2.*" />
+	</ItemGroup>
+
+</Project>
