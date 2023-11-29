@@ -30,11 +30,10 @@ type App() =
                     }
                 }
                 HeadOutlet'()
-                CustomElement.lazyBlazorJs (hasBlazorJs = true)
+                CustomElement.lazyBlazorJs ()
             }
             body {
                 html.blazor<Routes> ()
-                script { src "_framework/blazor.server.js" }
                 script { src "https://unpkg.com/htmx.org@1.9.9" }
             }
         }
