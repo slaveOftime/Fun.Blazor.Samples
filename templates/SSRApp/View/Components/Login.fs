@@ -17,7 +17,7 @@ type Login() as this =
     member val Password = "" with get, set
 
     override _.Render() = form {
-        hxGetComponent typeof<Login>
+        hxPostComponent typeof<Login>
         html.blazor<AntiforgeryToken> ()
         input {
             type' InputTypes.text
@@ -28,18 +28,14 @@ type Login() as this =
             type' InputTypes.password
             name (nameof this.Password)
             value this.Password
-            style {
-                borderWidth 1
-                borderColor (
-                    if String.IsNullOrEmpty this.Password || this.Password.Length < 3 then
-                        color.red
-                    else
-                        color.green
-                )
-            }
         }
         button {
             type' InputTypes.submit
             "Login"
         }
+        if String.IsNullOrEmpty this.Password || this.Password.Length < 3 then
+            div {
+                style { color color.red }
+                "Wrong password"
+            }
     }

@@ -16,7 +16,7 @@ type OrderList() as this =
     member val Query = "" with get, set
 
     override _.OnInitializedAsync() = task {
-        do! Task.Delay 3000
+        do! Task.Delay 1000
 
         orders <-
             [

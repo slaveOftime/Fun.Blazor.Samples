@@ -1,7 +1,7 @@
 namespace SSRApp.View
 
-open Fun.Blazor
 open Microsoft.AspNetCore.Components.Web
+open Fun.Blazor
 
 
 type App() =

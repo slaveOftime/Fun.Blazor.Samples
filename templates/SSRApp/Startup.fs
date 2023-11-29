@@ -5,7 +5,6 @@ open System.Reflection
 open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.DependencyInjection
-open Fun.Blazor
 
 let builder = WebApplication.CreateBuilder(Environment.GetCommandLineArgs())
 let services = builder.Services
@@ -20,8 +19,9 @@ let app = builder.Build()
 app.UseStaticFiles()
 app.UseAntiforgery()
 
-app.MapBlazorSSRComponents(Assembly.GetExecutingAssembly(), enableAntiforgery = true)
-app.MapFunBlazorCustomElements(Assembly.GetExecutingAssembly(), enableAntiforgery = true)
+app.MapRazorComponentsForSSR(Assembly.GetExecutingAssembly())
+app.MapCustomElementsForSSR(Assembly.GetExecutingAssembly())
+
 app.MapRazorComponents<SSRApp.View.App>().AddInteractiveServerRenderMode()
 
 app.Run()
