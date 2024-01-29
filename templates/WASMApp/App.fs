@@ -12,11 +12,11 @@ let app =
     adaptiview () {
         let! count, setCount = cval(1).WithSetter()
 
-        div {
+        div.create [|
             div { $"Here is the count {count}" }
             button {
-                onclick (fun _ -> setCount (count + 2))
+                on.click (fun _ -> setCount (count + 2))
                 "Increase by 2"
             }
-        }
+        |]
     }

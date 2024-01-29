@@ -27,45 +27,50 @@ type Form() as this =
     }
 
     member _.FormView = form {
+        on.submit (ignore >> this.Submit)
         method "post"
         dataEnhance
-        onsubmit (ignore >> this.Submit)
         formName "person-info"
-        html.blazor<AntiforgeryToken> ()
-        input {
-            type' InputTypes.text
-            name (nameof this.Query)
-            value this.Query
-        }
-        button {
-            type' InputTypes.submit
-            "Submit"
-        }
-        if String.IsNullOrEmpty this.Query || this.Query.Length > 5 then
-            div {
-                style { color "red" }
-                $"{nameof this.Query} is not valid"
+        childContent [|
+            html.blazor<AntiforgeryToken> ()
+            input {
+                type' InputTypes.text
+                name (nameof this.Query)
+                value this.Query
             }
+            button {
+                type' InputTypes.submit
+                "Submit"
+            }
+            region {
+                if String.IsNullOrEmpty this.Query || this.Query.Length > 5 then
+                    div {
+                        style { color "red" }
+                        $"{nameof this.Query} is not valid"
+                    }
+            }
+        |]
     }
 
-    override _.Render() = fragment {
-        PageTitle'() { "Form demo" }
-        SectionContent'() {
-            SectionName "header"
-            h1 { "Form demo" }
-        }
-        div {
-            style { height "100vh" }
-            a {
-                href "form?#person-info"
-                "check the form"
+    override _.Render() =
+        html.fragment [|
+            PageTitle'() { "Form demo" }
+            SectionContent'() {
+                SectionName "header"
+                h1 { "Form demo" }
             }
-        }
-        h2 {
-            id "person-info"
-            "person info"
-        }
-        this.FormView
-        if isSubmitting then progress.create ()
-        div { style { height "100vh" } }
-    }
+            div {
+                style { height "100vh" }
+                a {
+                    href "form?#person-info"
+                    "check the form"
+                }
+            }
+            h2 {
+                id "person-info"
+                "person info"
+            }
+            this.FormView
+            region { if isSubmitting then progress.create () }
+            div { style { height "100vh" } }
+        |]

@@ -10,16 +10,17 @@ open SSRApp.View.Components
 type Form() =
     inherit FunComponent()
 
-    override _.Render() = fragment {
-        PageTitle'() { "Form demo" }
-        SectionContent'() {
-            SectionName "header"
-            h1 { "Form demo" }
-        }
-        section {
-            hxTrigger' hxEvt.load
-            hxGetComponent typeof<Login>
-            hxSwap_outerHTML
-            "Loading login page..."
-        }
-    }
+    override _.Render() =
+        html.fragment [|
+            PageTitle'() { "Form demo" }
+            SectionContent'() {
+                SectionName "header"
+                h1 { "Form demo" }
+            }
+            section {
+                hxTrigger' hxEvt.load
+                hxGetComponent typeof<Login>
+                hxSwap_outerHTML
+                "Loading login page..."
+            }
+        |]

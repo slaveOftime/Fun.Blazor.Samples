@@ -14,10 +14,11 @@ type Counter() as this =
 
     override _.OnInitialized() = count <- this.init_count
 
-    override _.Render() = fragment {
-        p { $"Current count: {count}" }
-        button {
-            onclick (fun _ -> count <- count + 1)
-            "Click me"
-        }
-    }
+    override _.Render() =
+        html.fragment [|
+            p { $"Current count: {count}" }
+            button {
+                on.click (fun _ -> count <- count + 1)
+                "Click me"
+            }
+        |]
