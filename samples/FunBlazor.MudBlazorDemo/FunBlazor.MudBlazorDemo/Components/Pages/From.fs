@@ -5,6 +5,7 @@ open System.Threading.Tasks
 open Microsoft.AspNetCore.Components
 open Microsoft.AspNetCore.Components.Web
 open Microsoft.AspNetCore.Components.Forms
+open MudBlazor
 open Fun.Blazor
 
 [<Route "/form">]
@@ -33,21 +34,15 @@ type Form() as this =
         formName "person-info"
         childContent [|
             html.blazor<AntiforgeryToken> ()
-            input {
-                type' InputTypes.text
-                name (nameof this.Query)
-                value this.Query
+            MudTextField'() {
+                "name", nameof this.Query
+                Value this.Query
+                Error(String.IsNullOrEmpty this.Query || this.Query.Length > 5)
+                ErrorText $"{nameof this.Query} is not valid"
             }
-            button {
-                type' InputTypes.submit
+            MudButton'() {
+                ButtonType ButtonType.Submit
                 "Submit"
-            }
-            region {
-                if String.IsNullOrEmpty this.Query || this.Query.Length > 5 then
-                    div {
-                        style { color "red" }
-                        $"{nameof this.Query} is not valid"
-                    }
             }
         |]
     }
@@ -61,8 +56,8 @@ type Form() as this =
             }
             div {
                 style { height "100vh" }
-                a {
-                    href "form?#person-info"
+                MudLink'() {
+                    Href "form?#person-info"
                     "check the form"
                 }
             }
@@ -71,6 +66,6 @@ type Form() as this =
                 "person info"
             }
             this.FormView
-            region { if isSubmitting then progress.create () }
+            region { if isSubmitting then MudProgressLinear'() { Indeterminate true } }
             div { style { height "100vh" } }
         |]

@@ -1,38 +1,28 @@
 namespace FunBlazor.MudBlazorDemo.Components.Layout
 
 open Microsoft.AspNetCore.Components.Routing
-open Fun.Blazor
-
-
-[<AutoOpen>]
-module Extensions =
-    open Fun.Blazor.Operators
-
-    type NavLink' with
-
-        [<CustomOperation "Href">]
-        member inline _.Href([<InlineIfLambda>] render: AttrRenderFragment, url: string) = render ==> ("href" => url)
+open MudBlazor
 
 
 type NavMenu =
-    static member Create() = nav {
-        style {
-            displayFlex
-            alignItemsCenter
-            gap 10
-        }
+    static member Create() = MudNavMenu'() {
         childContent [|
-            NavLink'() {
+            MudNavLink'() {
                 Href ""
                 Match NavLinkMatch.All
+                Icon Icons.Material.Filled.Home
                 "Home"
             }
-            NavLink'() {
+            MudNavLink'() {
                 Href "counter"
+                Match NavLinkMatch.Prefix
+                Icon Icons.Material.Filled.Add
                 "Counter"
             }
-            NavLink'() {
+            MudNavLink'() {
                 Href "form"
+                Match NavLinkMatch.Prefix
+                Icon Icons.Material.Filled.List
                 "Form demo"
             }
         |]

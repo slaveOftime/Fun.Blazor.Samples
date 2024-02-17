@@ -2,6 +2,7 @@ namespace FunBlazor.MudBlazorDemo.Client.Pages
 
 open Microsoft.AspNetCore.Components
 open Microsoft.AspNetCore.Components.Web
+open MudBlazor
 open Fun.Blazor
 
 [<Route "/counter">]
@@ -19,9 +20,9 @@ type Counter() =
                 h1 { "Counter" }
             }
             p { $"Current count: {count}" }
-            button {
-                style { color "green" }
-                on.click (fun _ -> count <- count + 1)
+            MudButton'() {
+                Color Color.Success
+                OnClick(fun _ -> count <- count + 1)
                 "Click me"
             }
         |]

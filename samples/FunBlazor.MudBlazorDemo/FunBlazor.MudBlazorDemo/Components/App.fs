@@ -30,11 +30,14 @@ type App() =
                             fontWeightBold
                         }
                     }
+                    stylesheet "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+                    stylesheet "_content/MudBlazor/MudBlazor.min.css"
                     HeadOutlet'.create ()
                 |]
                 body {
                     html.blazor<Routes> ()
                     script { src "_framework/blazor.web.js" }
+                    script { src "_content/MudBlazor/MudBlazor.min.js" }
                 }
             }
         |]

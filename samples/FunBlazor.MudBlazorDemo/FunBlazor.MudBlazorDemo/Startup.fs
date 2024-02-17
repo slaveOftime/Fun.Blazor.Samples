@@ -4,6 +4,7 @@ open System
 open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.DependencyInjection
+open MudBlazor.Services
 open FunBlazor.MudBlazorDemo.Components
 open FunBlazor.MudBlazorDemo.Client.Pages
 
@@ -14,6 +15,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents()
     
 builder.Services.AddFunBlazorServer()
+builder.Services.AddMudServices()
 
 
 let app = builder.Build()
