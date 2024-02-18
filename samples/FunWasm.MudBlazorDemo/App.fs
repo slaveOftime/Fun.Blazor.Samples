@@ -1,3 +1,4 @@
+// hot-reload
 [<AutoOpen>]
 module FunWasm.MudBlazorDemo.App
 
@@ -22,7 +23,7 @@ let homePage =
         MudText'() {
             Typo Typo.h1
             Color Color.Info
-            "Hi from FunBlazor "
+            "Hi from FunBlazor"
         }
     |]
 
@@ -94,23 +95,27 @@ let routes = html.route [|
 |]
 
 
-let app = ErrorBoundary'() {
-    ErrorContent(fun e -> MudAlert'() {
-        Severity Severity.Error
-        string e
-    })
-    childContent [|
-        MudThemeProvider'.create ()
-        MudDialogProvider'.create ()
-        MudSnackbarProvider'.create ()
-        MudLayout'.create [|
-            appbar
-            MudMainContent'() {
-                MudContainer'() {
-                    MaxWidth MaxWidth.ExtraLarge
-                    routes
+let app = 
+    ErrorBoundary'() {
+#if DEBUG
+        key (System.Random.Shared.Next()) // So hot reload can re-render correctly
+#endif
+        ErrorContent(fun e -> MudAlert'() {
+            Severity Severity.Error
+            string e
+        })
+        childContent [|
+            MudThemeProvider'.create ()
+            MudDialogProvider'.create ()
+            MudSnackbarProvider'.create ()
+            MudLayout'.create [|
+                appbar
+                MudMainContent'() {
+                    MudContainer'() {
+                        MaxWidth MaxWidth.ExtraLarge
+                        routes
+                    }
                 }
-            }
+            |]
         |]
-    |]
-}
+    }
