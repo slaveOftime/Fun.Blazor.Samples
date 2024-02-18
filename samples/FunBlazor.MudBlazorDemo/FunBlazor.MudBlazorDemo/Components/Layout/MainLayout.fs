@@ -12,8 +12,6 @@ type MainLayout() as this =
     let content =
         html.fragment [|
             MudThemeProvider'.create ()
-            MudDialogProvider'.create ()
-            MudSnackbarProvider'.create ()
             MudLayout'() {
                 MudAppBar'() {
                     // This will not work, because the layout is not all in server/client interactive mode,

@@ -27,7 +27,7 @@ let homePage =
     |]
 
 let counterPage =
-    html.injectWithNoKey (fun (store: IShareStore) ->
+    html.injectWithNoKey (fun (store: IShareStore, snackbar: ISnackbar) ->
         html.fragment [|
             SectionContent'() {
                 SectionName "Title"
@@ -43,8 +43,11 @@ let counterPage =
             MudButton'() {
                 Variant Variant.Filled
                 Color Color.Primary
-                OnClick(fun _ -> store.Count.Publish((+) 1))
-                "Increase by 124"
+                OnClick(fun _ -> 
+                    store.Count.Publish((+) 1)
+                    snackbar.Add($"Count = {store.Count.Value}", severity = Severity.Success) |> ignore
+                )
+                "Increase by 1"
             }
         |]
     )
