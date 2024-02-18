@@ -1,22 +1,113 @@
-// hot-reload
-// hot-reload is the flag to let cli know this file should be included
-// It has dependency requirement: the root is the app which is used in the Startup.fs
-// All other files which want have hot reload, need to drill down to that file, and all the middle file should also add the '// hot-reload' flag at the top of taht file
 [<AutoOpen>]
 module FunWasm.MudBlazorDemo.App
 
-open FSharp.Data.Adaptive
+open Microsoft.AspNetCore.Components.Web
+open Microsoft.AspNetCore.Components.Routing
+open MudBlazor
 open Fun.Blazor
+open Fun.Blazor.Router
 
-let app =
-    adaptiview () {
-        let! count, setCount = cval(1).WithSetter()
 
-        div.create [|
-            div { $"Here is the count {count}" }
-            button {
-                on.click (fun _ -> setCount (count + 2))
-                "Increase by 2"
+type IShareStore with
+
+    member store.Count = store.CreateCVal(nameof store.Count, 0)
+    member store.IsMenuOpen = store.CreateCVal(nameof store.IsMenuOpen, false)
+
+let homePage =
+    html.fragment [|
+        SectionContent'() {
+            SectionName "Title"
+            "Home"
+        }
+        MudText'() {
+            Typo Typo.h1
+            Color Color.Info
+            "Hi from FunBlazor "
+        }
+    |]
+
+let counterPage =
+    html.injectWithNoKey (fun (store: IShareStore) ->
+        html.fragment [|
+            SectionContent'() {
+                SectionName "Title"
+                "Counter"
+            }
+            adaptiview () {
+                let! count = store.Count
+                div {
+                    "Here is the count: "
+                    count
+                }
+            }
+            MudButton'() {
+                Variant Variant.Filled
+                Color Color.Primary
+                OnClick(fun _ -> store.Count.Publish((+) 1))
+                "Increase by 124"
             }
         |]
-    }
+    )
+
+
+let appbar =
+    // We should use a fixed key or no key here to avoid infinite re-redner caused MudDrawer and MudLayout
+    html.injectWithNoKey (fun (store: IShareStore) ->
+        html.fragment [|
+            MudAppBar'.create [|
+                MudIconButton'() {
+                    Icon Icons.Material.Filled.Menu
+                    Color Color.Inherit
+                    Edge Edge.Start
+                    OnClick(fun _ -> store.IsMenuOpen.Publish(not))
+                }
+                SectionOutlet'() { SectionName "Title" }
+            |]
+            adaptiview () {
+                let! binding = store.IsMenuOpen.WithSetter()
+                MudDrawer'() {
+                    Open' binding
+                    Elevation 1
+                    MudNavMenu'.create [|
+                        MudNavLink'() {
+                            Href "/"
+                            Match NavLinkMatch.All
+                            "Home"
+                        }
+                        MudNavLink'() {
+                            Href "/counter"
+                            Match NavLinkMatch.Prefix
+                            "Counter"
+                        }
+                    |]
+                }
+            }
+        |]
+    )
+
+let routes = html.route [| 
+    routeCi "/counter" counterPage
+    routeAny homePage
+|]
+
+
+let app = ErrorBoundary'() {
+    ErrorContent(fun e -> MudAlert'() {
+        Severity Severity.Error
+        string e
+    })
+    childContent [|
+        MudThemeProvider'.create ()
+        MudDialogProvider'.create ()
+        MudSnackbarProvider'.create ()
+        MudLayout'.create [|
+            appbar
+            MudMainContent'() {
+                MudContainer'() {
+                    MaxWidth MaxWidth.ExtraLarge
+                    routes
+                }
+            }
+        |]
+    |]
+}
