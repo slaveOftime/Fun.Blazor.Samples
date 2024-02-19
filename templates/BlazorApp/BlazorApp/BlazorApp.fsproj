@@ -17,7 +17,7 @@
 	<ItemGroup>
 		<PackageReference Include="Fun.Blazor" Version="4.0.*" />
 		<PackageReference Include="Fun.Blazor.Server" Version="4.0.*" />
-    	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.*" />
+    	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.0" />
 	</ItemGroup>
 	
 	<ItemGroup>
