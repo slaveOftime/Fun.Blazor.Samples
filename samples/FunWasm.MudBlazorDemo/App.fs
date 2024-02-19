@@ -28,7 +28,7 @@ let homePage =
     |]
 
 let counterPage =
-    html.injectWithNoKey (fun (store: IShareStore, snackbar: ISnackbar) ->
+    html.inject (fun (store: IShareStore, snackbar: ISnackbar) ->
         html.fragment [|
             SectionContent'() {
                 SectionName "Title"
@@ -55,39 +55,42 @@ let counterPage =
 
 
 let appbar =
-    // We should use a fixed key or no key here to avoid infinite re-redner caused MudDrawer and MudLayout
     html.injectWithNoKey (fun (store: IShareStore) ->
-        html.fragment [|
-            MudAppBar'.create [|
-                MudIconButton'() {
-                    Icon Icons.Material.Filled.Menu
-                    Color Color.Inherit
-                    Edge Edge.Start
-                    OnClick(fun _ -> store.IsMenuOpen.Publish(not))
-                }
-                SectionOutlet'() { SectionName "Title" }
-            |]
-            adaptiview () {
-                let! binding = store.IsMenuOpen.WithSetter()
-                MudDrawer'() {
-                    Open' binding
-                    Elevation 1
-                    MudNavMenu'.create [|
-                        MudNavLink'() {
-                            Href "/"
-                            Match NavLinkMatch.All
-                            "Home"
-                        }
-                        MudNavLink'() {
-                            Href "/counter"
-                            Match NavLinkMatch.Prefix
-                            "Counter"
-                        }
-                    |]
-                }
+        MudAppBar'.create [|
+            MudIconButton'() {
+                Icon Icons.Material.Filled.Menu
+                Color Color.Inherit
+                Edge Edge.Start
+                OnClick(fun _ -> store.IsMenuOpen.Publish(not))
             }
+            SectionOutlet'() { SectionName "Title" }
         |]
     )
+
+let navmenus =
+    // We should use a fixed key or no key here to avoid infinite re-redner caused MudDrawer and MudLayout
+    html.injectWithNoKey (fun (store: IShareStore) ->
+        adaptiview () {
+            let! binding = store.IsMenuOpen.WithSetter()
+            MudDrawer'() {
+                Open' binding
+                Elevation 1
+                MudNavMenu'.create [|
+                    MudNavLink'() {
+                        Href "/"
+                        Match NavLinkMatch.All
+                        "Home"
+                    }
+                    MudNavLink'() {
+                        Href "/counter"
+                        Match NavLinkMatch.Prefix
+                        "Counter"
+                    }
+                |]
+            }
+        }
+    )
+
 
 let routes = html.route [| 
     routeCi "/counter" counterPage
@@ -110,6 +113,7 @@ let app =
             MudSnackbarProvider'.create ()
             MudLayout'.create [|
                 appbar
+                navmenus
                 MudMainContent'() {
                     MudContainer'() {
                         MaxWidth MaxWidth.ExtraLarge

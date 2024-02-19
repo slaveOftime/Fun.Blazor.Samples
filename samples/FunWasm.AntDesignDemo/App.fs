@@ -29,7 +29,7 @@ let homePage =
     |]
 
 let counterPage =
-    html.injectWithNoKey (fun (store: IShareStore, snackbar: NotificationService) ->
+    html.inject (fun (store: IShareStore, snackbar: NotificationService) ->
         html.fragment [|
             SectionContent'() {
                 SectionName "Title"
@@ -100,7 +100,11 @@ let navmenus =
         }
     }
 
-let routes = html.route [| routeCi "/counter" counterPage; routeAny homePage |]
+
+let routes = html.route [| 
+    routeCi "/counter" counterPage
+    routeAny homePage
+|]
 
 
 let app =

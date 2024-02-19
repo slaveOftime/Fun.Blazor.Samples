@@ -31,7 +31,7 @@ let homePage =
     |]
 
 let counterPage =
-    html.injectWithNoKey (fun (store: IShareStore, snackbar: IToastService) ->
+    html.inject (fun (store: IShareStore, snackbar: IToastService) ->
         html.fragment [|
             SectionContent'() {
                 SectionName "Title"
