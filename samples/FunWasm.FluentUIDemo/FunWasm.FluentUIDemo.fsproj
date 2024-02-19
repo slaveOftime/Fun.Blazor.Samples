@@ -10,12 +10,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Fun.Blazor.Microsoft.FluentUI" Version="4.4.1" />
 		<PackageReference Include="Fun.Blazor.Wasm" Version="4.0.*" />
 		<PackageReference Include="Fun.Blazor.HotReload" Version="4.0.*" PrivateAssets="all" />
 		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="8.0.*" />
 		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="8.0.*" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.4.0" />
 	</ItemGroup>
 
 	<!-- In dotnet 7 there is a bug for Fun.Blazor.Cli to do hot reload.

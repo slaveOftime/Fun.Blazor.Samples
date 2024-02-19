@@ -3,6 +3,7 @@
 open System
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.AspNetCore.Components.WebAssembly.Hosting
+open Microsoft.FluentUI.AspNetCore.Components
 open Fun.Blazor
 open FunWasm.FluentUIDemo
 
@@ -15,5 +16,6 @@ builder.AddFunBlazor("#app", app)
 #endif
 
 builder.Services.AddFunBlazorWasm()
+builder.Services.AddFluentUIComponents()
 
 builder.Build().RunAsync()
