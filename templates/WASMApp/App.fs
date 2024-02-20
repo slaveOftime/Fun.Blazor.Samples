@@ -15,7 +15,7 @@ let app =
         div.create [|
             div { $"Here is the count {count}" }
             button {
-                on.click (fun _ -> setCount (count + 2))
+                onclick (fun _ -> setCount (count + 2))
                 "Increase by 2"
             }
         |]

@@ -21,7 +21,7 @@ type Counter() =
             p { $"Current count: {count}" }
             button {
                 style { color "green" }
-                on.click (fun _ -> count <- count + 1)
+                onclick (fun _ -> count <- count + 1)
                 "Click me"
             }
         |]

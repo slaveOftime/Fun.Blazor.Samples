@@ -28,7 +28,7 @@ type Form() as this =
     }
 
     member _.FormView = form {
-        on.submit (ignore >> this.Submit)
+        onsubmit (ignore >> this.Submit)
         method "post"
         dataEnhance
         formName "person-info"
