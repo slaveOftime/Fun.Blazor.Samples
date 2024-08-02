@@ -25,7 +25,7 @@ type Counter() as this =
                 h1 { "Counter" }
             }
             p { $"Current count: {count}" }
-            MudButton'() {
+            MudButton'' {
                 Color Color.Success
                 OnClick(fun _ -> 
                     count <- count + 1

@@ -34,13 +34,13 @@ type Form() as this =
         formName "person-info"
         childContent [|
             html.blazor<AntiforgeryToken> ()
-            MudTextField'() {
+            MudTextField'' {
                 "name", nameof this.Query
                 Value this.Query
                 Error(String.IsNullOrEmpty this.Query || this.Query.Length > 5)
                 ErrorText $"{nameof this.Query} is not valid"
             }
-            MudButton'() {
+            MudButton'' {
                 ButtonType ButtonType.Submit
                 "Submit"
             }
@@ -56,7 +56,7 @@ type Form() as this =
             }
             div {
                 style { height "100vh" }
-                MudLink'() {
+                MudLink'' {
                     Href "form?#person-info"
                     "check the form"
                 }

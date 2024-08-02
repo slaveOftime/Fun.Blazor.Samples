@@ -62,7 +62,7 @@ type Home() as this =
             }
             region {
                 if items.IsEmpty then
-                    MudProgressLinear'() { Indeterminate true }
+                    MudProgressLinear'' { Indeterminate true }
                 else
                     this.MainContent
             }

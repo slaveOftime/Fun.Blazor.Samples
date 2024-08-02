@@ -12,8 +12,8 @@ type MainLayout() as this =
     let content =
         html.fragment [|
             MudThemeProvider'.create ()
-            MudLayout'() {
-                MudAppBar'() {
+            MudLayout'' {
+                MudAppBar'' {
                     // This will not work, because the layout is not all in server/client interactive mode,
                     // some pages are SSR, so by default the whole app is static and cannot interact.
                     // MudIconButton'() {
@@ -24,12 +24,12 @@ type MainLayout() as this =
                     // }
                     SectionOutlet'() { SectionName "header" }
                 }
-                MudDrawer'() {
+                MudDrawer'' {
                     Open isDrawerOpen
                     // OpenChanged(fun x -> isDrawerOpen <- x)
                     NavMenu.Create()
                 }
-                MudMainContent'() { MudContainer'() { this.Body } }
+                MudMainContent'' { MudContainer'' { this.Body } }
             }
         |]
 
