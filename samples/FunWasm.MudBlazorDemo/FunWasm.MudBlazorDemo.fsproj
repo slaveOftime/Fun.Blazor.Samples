@@ -10,12 +10,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Fun.Blazor.MudBlazor" Version="6.15.0" />
+		<PackageReference Include="Fun.Blazor.MudBlazor" Version="7.5.0" />
 		<PackageReference Include="Fun.Blazor.Wasm" Version="4.0.*" />
 		<PackageReference Include="Fun.Blazor.HotReload" Version="4.0.*" PrivateAssets="all" />
 		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="8.0.*" />
 		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="8.0.*" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.*" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
 	</ItemGroup>
 
