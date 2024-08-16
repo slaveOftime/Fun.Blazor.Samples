@@ -91,6 +91,7 @@ type ThreejsDemo() as this =
                     }
                 }
             }
+            region { if isLoading then MudProgressLinear'' { Indeterminate } }
             Viewer'' {
                 Scene scene
                 ViewerSettings viewSettings

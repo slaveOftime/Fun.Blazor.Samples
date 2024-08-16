@@ -5,6 +5,7 @@ open System.Threading.Tasks
 open Microsoft.AspNetCore.Components
 open Microsoft.AspNetCore.Components.Web
 open Fun.Blazor
+open MudBlazor
 
 [<Route "/">]
 [<StreamRendering>]
@@ -59,5 +60,10 @@ type Home() as this =
                 SectionName "header"
                 h1 { "Home" }
             }
-            region { if items.IsEmpty then progress.create () else this.MainContent }
+            region {
+                if items.IsEmpty then
+                    MudProgressLinear'' { Indeterminate }
+                else
+                    this.MainContent
+            }
         |]
