@@ -2,6 +2,7 @@ namespace MudBlazorThreeAuth.Client.Pages
 
 open Microsoft.AspNetCore.Components
 open Microsoft.AspNetCore.Components.Web
+open MudBlazor
 open Fun.Blazor
 
 [<Route "/counter">]
@@ -18,10 +19,14 @@ type Counter() =
                 SectionName "header"
                 h1 { "Counter" }
             }
-            p { $"Current count: {count}" }
-            button {
-                style { color "green" }
-                onclick (fun _ -> count <- count + 1)
+            MudText'' {
+                Typo Typo.body1
+                $"Current count: {count}"
+            }
+            MudButton'' {
+                Color Color.Success
+                Variant Variant.Filled
+                OnClick(fun _ -> count <- count + 1)
                 "Click me"
             }
         |]

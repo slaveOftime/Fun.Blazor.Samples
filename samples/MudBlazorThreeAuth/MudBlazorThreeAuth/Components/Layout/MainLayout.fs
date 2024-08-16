@@ -1,6 +1,7 @@
 namespace MudBlazorThreeAuth.Components.Layout
 
 open Microsoft.AspNetCore.Components
+open MudBlazor
 open Fun.Blazor
 
 type MainLayout() as this =
@@ -9,6 +10,10 @@ type MainLayout() as this =
     let content = div.create [|
         NavMenu.Create()
         SectionOutlet'() { SectionName "header" }
+        MudThemeProvider'.create ()
+        MudPopoverProvider'.create ()
+        MudSnackbarProvider'.create ()
+        MudDialogProvider'.create ()
         main { this.Body }
     |]
 
