@@ -36,6 +36,10 @@ type NavMenu =
                 "Data Grid Demo"
             }
             NavLink'() {
+                Href "threejs"
+                "Threejs Demo"
+            }
+            NavLink'() {
                 Href "form"
                 "Form demo"
             }
