@@ -6,6 +6,7 @@
 
 	<ItemGroup>
 		<Compile Include="Pages/Counter.fs" />
+		<Compile Include="Pages/DataGridDemo.fs" />
 		<Compile Include="Startup.fs" />
 	</ItemGroup>
 

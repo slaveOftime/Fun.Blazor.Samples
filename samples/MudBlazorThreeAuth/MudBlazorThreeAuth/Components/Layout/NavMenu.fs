@@ -32,6 +32,10 @@ type NavMenu =
                 "Counter"
             }
             NavLink'() {
+                Href "data-grid-demo"
+                "Data Grid Demo"
+            }
+            NavLink'() {
                 Href "form"
                 "Form demo"
             }
