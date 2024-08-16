@@ -1,6 +1,7 @@
 namespace MudBlazorThreeAuth.Client.Pages
 
 open System
+open Microsoft.AspNetCore.Authorization
 open Microsoft.AspNetCore.Components
 open Microsoft.AspNetCore.Components.Web
 open Fun.Result
@@ -18,6 +19,8 @@ open HomagGroup.Blazor3D.Geometires
 // https://github.com/HomagGroup/Blazor3D?tab=readme-ov-file#with-custom-scene
 // Try to use it with their example doc and use class based style
 [<Route "/threejs">]
+// If user is not login to access this page then will redirect user to login page automatically
+[<Authorize>]
 [<FunInteractiveAuto>]
 type ThreejsDemo() as this =
     inherit FunComponent()
