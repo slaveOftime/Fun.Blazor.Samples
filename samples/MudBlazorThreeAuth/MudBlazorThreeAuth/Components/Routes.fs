@@ -10,11 +10,8 @@ type Routes() =
 
     override _.Render() = Router'() {
         AppAssembly(Assembly.GetExecutingAssembly())
-        Found(fun routeData ->
-            html.blazor (
-                ComponentAttrBuilder<AuthorizeRouteView>()
-                    .Add((fun x -> x.RouteData), routeData)
-                    .Add((fun x -> x.DefaultLayout), typeof<MainLayout>)
-            )
-        )
+        Found(fun routeData -> AuthorizeRouteView'' {
+            RouteData routeData
+            DefaultLayout typeof<MainLayout>
+        })
     }
