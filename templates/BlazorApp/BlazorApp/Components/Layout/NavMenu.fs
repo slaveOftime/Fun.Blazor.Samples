@@ -13,6 +13,8 @@ module Extensions =
         [<CustomOperation "Href">]
         member inline _.Href([<InlineIfLambda>] render: AttrRenderFragment, url: string) = render ==> ("href" => url)
 
+    let NavLink'' = NavLink'()
+
 
 type NavMenu =
     static member Create() = nav {
@@ -21,19 +23,17 @@ type NavMenu =
             alignItemsCenter
             gap 10
         }
-        childContent [|
-            NavLink'() {
-                Href ""
-                Match NavLinkMatch.All
-                "Home"
-            }
-            NavLink'() {
-                Href "counter"
-                "Counter"
-            }
-            NavLink'() {
-                Href "form"
-                "Form demo"
-            }
-        |]
+        NavLink'' {
+            Href ""
+            Match NavLinkMatch.All
+            "Home"
+        }
+        NavLink'' {
+            Href "counter"
+            "Counter"
+        }
+        NavLink'' {
+            Href "form"
+            "Form demo"
+        }
     }

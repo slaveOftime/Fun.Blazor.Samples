@@ -1,8 +1,5 @@
 This project is trying to follow the default blazor official template
 
-
-## Dev
-
-Open terminal and run
-    
-    dotnet watch run --project .\BlazorApp\BlazorApp.fsproj
+```bash
+dotnet run --project .\BlazorApp\BlazorApp.fsproj
+```

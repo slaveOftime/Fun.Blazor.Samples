@@ -6,10 +6,10 @@ open Fun.Blazor
 type MainLayout() as this =
     inherit LayoutComponentBase()
 
-    let content = div.create [|
+    let content = div {
         NavMenu.Create()
-        SectionOutlet'() { SectionName "header" }
+        SectionOutlet'' { SectionName "header" }
         main { this.Body }
-    |]
+    }
 
     override _.BuildRenderTree(builder) = content.Invoke(this, builder, 0) |> ignore

@@ -18,26 +18,24 @@ type Login() as this =
 
     override _.Render() = form {
         hxPostComponent typeof<Login>
-        childContent [|
-            html.blazor<AntiforgeryToken> ()
-            input {
-                type' InputTypes.text
-                name (nameof this.Name)
-                value this.Name
+        html.blazor<AntiforgeryToken> ()
+        input {
+            type' InputTypes.text
+            name (nameof this.Name)
+            value this.Name
+        }
+        input {
+            type' InputTypes.password
+            name (nameof this.Password)
+            value this.Password
+        }
+        button {
+            type' InputTypes.submit
+            "Login"
+        }
+        if String.IsNullOrEmpty this.Password || this.Password.Length < 3 then
+            div {
+                style { color color.red }
+                "Wrong password"
             }
-            input {
-                type' InputTypes.password
-                name (nameof this.Password)
-                value this.Password
-            }
-            button {
-                type' InputTypes.submit
-                "Login"
-            }
-            if String.IsNullOrEmpty this.Password || this.Password.Length < 3 then
-                div {
-                    style { color color.red }
-                    "Wrong password"
-                }
-        |]
     }

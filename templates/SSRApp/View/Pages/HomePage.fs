@@ -10,16 +10,15 @@ open SSRApp.View.Components
 type Home() =
     inherit FunComponent()
 
-    override _.Render() =
-        html.fragment [|
-            PageTitle'() { "Home" }
-            SectionContent'() {
-                SectionName "header"
-                h1 { "Home" }
-            }
-            section {
-                hxGetComponent typeof<OrderList>
-                hxTrigger' hxEvt.intersect
-                "Loading order list ..."
-            }
-        |]
+    override _.Render() = fragment {
+        PageTitle'' { "Home" }
+        SectionContent'' {
+            SectionName "header"
+            h1 { "Home" }
+        }
+        section {
+            hxGetComponent typeof<OrderList>
+            hxTrigger' hxEvt.intersect
+            "Loading order list ..."
+        }
+    }
