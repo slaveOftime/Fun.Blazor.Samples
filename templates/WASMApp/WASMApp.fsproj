@@ -10,6 +10,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Fun.Blazor" Version="4.1.*" />
 		<PackageReference Include="Fun.Blazor.Wasm" Version="4.1.*" />
 		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="9.0.*" />
 		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="9.0.*" />

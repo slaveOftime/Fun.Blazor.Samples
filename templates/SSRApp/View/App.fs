@@ -29,7 +29,7 @@ type App() =
                         fontWeightBold
                     }
                 }
-                HeadOutlet'' { }
+                HeadOutlet''
                 CustomElement.lazyBlazorJs ()
             }
             body {

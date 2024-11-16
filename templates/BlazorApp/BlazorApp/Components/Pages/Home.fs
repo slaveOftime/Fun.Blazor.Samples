@@ -24,11 +24,17 @@ type Home() as this =
 
     member _.MainContent = fragment {
         div {
-            a {
-                style { color (if this.query.HasValue then "hotpink" else "grey") }
-                href "?query=3"
-                "filter: bigger than 3"
-            }
+            if this.query.HasValue then
+                a {
+                    href "?query="
+                    "clear filter"
+                }
+            else
+                a {
+                    style { color (if this.query.HasValue then "hotpink" else "grey") }
+                    href "?query=3"
+                    "filter: bigger than 3"
+                }
         }
         ul {
             for i in this.FilteredItems do
@@ -40,7 +46,7 @@ type Home() as this =
     }
 
     override _.OnInitializedAsync() = task {
-        do! Task.Delay 2000
+        do! Task.Delay 1000
         items <- [ 1..5 ]
         this.StateHasChanged()
 

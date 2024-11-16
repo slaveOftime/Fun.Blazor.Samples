@@ -19,12 +19,12 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="9.0.*" />
-		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="9.0.*" />
 		<PackageReference Include="Fun.Htmx" Version="4.1.*" />
 		<PackageReference Include="Fun.Blazor" Version="4.1.*" />
 		<PackageReference Include="Fun.Blazor.Server" Version="4.1.*" />
 		<PackageReference Include="Fun.Blazor.CustomElements" Version="4.1.*" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="9.0.*" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="9.0.*" />
 	</ItemGroup>
 
 </Project>

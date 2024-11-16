@@ -29,7 +29,7 @@ type App() =
                         fontWeightBold
                     }
                 }
-                HeadOutlet'' { }
+                HeadOutlet''
             }
             body {
                 html.blazor<Routes> ()
