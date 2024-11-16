@@ -4,7 +4,6 @@ module FunWasm.RadzenDemo.App
 open FSharp.Data.Adaptive
 open Fun.Blazor
 open Radzen
-open Radzen.Blazor
 open Radzen.Blazor.Blazor
 
 let private isDrawerOpen = cval false
@@ -49,6 +48,7 @@ let app = RadzenLayout'' {
     }
     RadzenBody'' {
         counter
+        br
         adapt {
             let! txt = cval("<h1>hi</h1>").WithSetter()
             RadzenHtmlEditor'' { Value' txt }
