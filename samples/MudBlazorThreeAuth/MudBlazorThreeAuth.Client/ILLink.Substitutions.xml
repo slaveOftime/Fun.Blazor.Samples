@@ -1,0 +1,8 @@
+<linker>
+	<assembly fullname="MudBlazorThreeAuth.Client">
+		<resource name="FSharpSignatureCompressedData.MudBlazorThreeAuth.Client" action="remove" />
+		<resource name="FSharpSignatureCompressedDataB.MudBlazorThreeAuth.Client" action="remove" />
+		<resource name="FSharpOptimizationCompressedData.MudBlazorThreeAuth.Client" action="remove" />
+		<resource name="FSharpOptimizationCompressedDataB.MudBlazorThreeAuth.Client" action="remove" />
+	</assembly>
+</linker>

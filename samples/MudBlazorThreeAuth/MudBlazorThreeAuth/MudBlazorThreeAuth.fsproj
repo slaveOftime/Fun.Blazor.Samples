@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<Compile Include="Endpoints/Account.fs" />
 		<Compile Include="Components/Layout/NavMenu.fs" />
@@ -16,15 +16,15 @@
 		<Compile Include="Components/App.fs" />
 		<Compile Include="Startup.fs" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
-		<PackageReference Include="Fun.Blazor" Version="4.0.*" />
-		<PackageReference Include="Fun.Blazor.Server" Version="4.0.*" />
-    	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.0" />
+		<PackageReference Include="Fun.Blazor" Version="4.1.*" />
+		<PackageReference Include="Fun.Blazor.Server" Version="4.1.*" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.*" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
-	  <ProjectReference Include="..\MudBlazorThreeAuth.Client\MudBlazorThreeAuth.Client.fsproj" />
+		<ProjectReference Include="..\MudBlazorThreeAuth.Client\MudBlazorThreeAuth.Client.fsproj" />
 	</ItemGroup>
 
 </Project>

@@ -8,7 +8,7 @@ open MudBlazorThreeAuth.Components.Layout
 type Routes() =
     inherit FunComponent()
 
-    override _.Render() = Router'() {
+    override _.Render() = Router'' {
         AppAssembly(Assembly.GetExecutingAssembly())
         Found(fun routeData -> AuthorizeRouteView'' {
             RouteData routeData

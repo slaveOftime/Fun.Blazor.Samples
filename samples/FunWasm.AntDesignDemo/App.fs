@@ -15,121 +15,98 @@ type IShareStore with
     member store.Count = store.CreateCVal(nameof store.Count, 0)
     member store.IsMenuOpen = store.CreateCVal(nameof store.IsMenuOpen, false)
 
-let homePage =
-    html.fragment [|
-        SectionContent'() {
-            SectionName "Title"
-            "Home"
-        }
-        Title'() {
-            Level 1
-            Type TextElementType.Danger
-            "Hi from FunBlazor"
-        }
-    |]
+let homePage = fragment {
+    SectionContent'' {
+        SectionName "Title"
+        "Home"
+    }
+    Title'' {
+        Level 1
+        Type TextElementType.Danger
+        "Hi from FunBlazor"
+    }
+}
 
 let counterPage =
-    html.inject (fun (store: IShareStore, snackbar: NotificationService) ->
-        html.fragment [|
-            SectionContent'() {
-                SectionName "Title"
-                "Counter"
+    html.inject (fun (store: IShareStore, snackbar: NotificationService) -> fragment {
+        SectionContent'' {
+            SectionName "Title"
+            "Counter"
+        }
+        adapt {
+            let! count = store.Count
+            div {
+                "Here is the count: "
+                count
             }
-            adaptiview () {
-                let! count = store.Count
-                div {
-                    "Here is the count: "
-                    count
-                }
-            }
-            Button'() {
-                Type ButtonType.Primary
-                OnClick(fun _ ->
-                    task {
-                        store.Count.Publish((+) 1)
-                        let! _ = snackbar.Open(NotificationConfig(Message = $"Count = {store.Count.Value}"))
-                        ()
-                    }
-                )
-                "Increase by 1"
-            }
-        |]
-    )
+        }
+        Button'' {
+            Type ButtonType.Primary
+            OnClick(fun _ -> task {
+                store.Count.Publish((+) 1)
+                let! _ = snackbar.Open(NotificationConfig(Message = $"Count = {store.Count.Value}"))
+                ()
+            })
+            "Increase by 1"
+        }
+    })
 
 
 let appbar =
-    html.injectWithNoKey (fun (store: IShareStore) ->
-        html.fragment [|
-            Header'.create [|
-                Button'() {
-                    Shape ButtonShape.Circle
-                    Icon IconType.Outline.MenuFold
-                    OnClick(fun _ -> store.IsMenuOpen.Publish(not))
-                }
-                span {
-                    style { color "white" }
-                    SectionOutlet'() { SectionName "Title" }
-                }
-            |]
-        |]
-    )
+    html.injectWithNoKey (fun (store: IShareStore) -> Header'' {
+        Button'' {
+            Shape ButtonShape.Circle
+            Icon IconType.Outline.MenuFold
+            OnClick(fun _ -> store.IsMenuOpen.Publish(not))
+        }
+        span {
+            style { color "white" }
+            SectionOutlet'' { SectionName "Title" }
+        }
+    })
 
-let navmenus =
-    Sider'() {
-        Width 200
-        Menu'() {
-            Mode MenuMode.Inline
-            style {
-                height "100%"
-                borderRight "0"
+let navmenus = Sider'' {
+    Width 200
+    Menu'' {
+        Mode MenuMode.Inline
+        style {
+            height "100%"
+            borderRight "0"
+        }
+        MenuItem'' {
+            a {
+                href "/"
+                "Home"
             }
-            childContent [|
-                MenuItem'() {
-                    a {
-                        href "/"
-                        "Home"
-                    }
-                }
-                MenuItem'() {
-                    a {
-                        href "/counter"
-                        "Counter"
-                    }
-                }
-            |]
+        }
+        MenuItem'' {
+            a {
+                href "/counter"
+                "Counter"
+            }
         }
     }
+}
 
 
-let routes = html.route [| 
-    routeCi "/counter" counterPage
-    routeAny homePage
-|]
+let routes = html.route [| routeCi "/counter" counterPage; routeAny homePage |]
 
 
-let app =
-    ErrorBoundary'() {
-#if DEBUG
-        key (System.Random.Shared.Next()) // So hot reload can re-render correctly
-#endif
-        ErrorContent(fun e ->
-            Alert'() {
-                Type AlertType.Error
-                string e
+let app = ErrorBoundary'' {
+    ErrorContent(fun e -> Alert'' {
+        Type AlertType.Error
+        string e
+    })
+    AntContainer''
+    Layout'' {
+        style { height "100%" }
+        appbar
+        Layout'' {
+            navmenus
+            Layout'' {
+                style { padding 10 }
+                Content'' { routes }
             }
-        )
-        AntContainer'.create ()
-        Layout'() {
-            style { height "100%" }
-            childContent [|
-                appbar
-                Layout'.create [|
-                    navmenus
-                    Layout'() {
-                        style { padding 10 }
-                        Content'() { routes }
-                    }
-                |]
-            |]
         }
     }
+}

@@ -22,7 +22,7 @@ type Login() =
             justifyContentCenter
             height "100vh"
         }
-        MudThemeProvider'.create ()
+        MudThemeProvider''
         MudPaper'' {
             style {
                 width 300

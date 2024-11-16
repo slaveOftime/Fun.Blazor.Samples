@@ -53,17 +53,16 @@ type Home() as this =
         this.StateHasChanged()
     }
 
-    override _.Render() =
-        html.fragment [|
-            PageTitle'() { "Home" }
-            SectionContent'() {
-                SectionName "header"
-                h1 { "Home" }
-            }
-            region {
-                if items.IsEmpty then
-                    MudProgressLinear'' { Indeterminate true }
-                else
-                    this.MainContent
-            }
-        |]
+    override _.Render() = fragment {
+        PageTitle'' { "Home" }
+        SectionContent'' {
+            SectionName "header"
+            h1 { "Home" }
+        }
+        region {
+            if items.IsEmpty then
+                MudProgressLinear'' { Indeterminate true }
+            else
+                this.MainContent
+        }
+    }

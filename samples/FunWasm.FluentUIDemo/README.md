@@ -6,15 +6,6 @@ App.fs contains UI logic
 
 Startup.fs is for hooking up everything and configuring server
 
-
-## Dev with hot-reload
-
-    Open terminal and run
-    dotnet run
-    
-    Open terminal and run
-    fun-blazor watch .\FunWasm.FluentUIDemo.fsproj 
-
-    > dotnet tool install --global Fun.Blazor.Cli
-
-> This required 'dotnet tool install --global Fun.Blazor.Cli'
+```bash
+dotnet run
+```

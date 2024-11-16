@@ -12,21 +12,20 @@ type Counter() =
 
     let mutable count = 0
 
-    override _.Render() =
-        html.fragment [|
-            PageTitle'() { "Counter" }
-            SectionContent'() {
-                SectionName "header"
-                h1 { "Counter" }
-            }
-            MudText'' {
-                Typo Typo.body1
-                $"Current count: {count}"
-            }
-            MudButton'' {
-                Color Color.Success
-                Variant Variant.Filled
-                OnClick(fun _ -> count <- count + 1)
-                "Click me"
-            }
-        |]
+    override _.Render() = fragment {
+        PageTitle'' { "Counter" }
+        SectionContent'' {
+            SectionName "header"
+            h1 { "Counter" }
+        }
+        MudText'' {
+            Typo Typo.body1
+            $"Current count: {count}"
+        }
+        MudButton'' {
+            Color Color.Success
+            Variant Variant.Filled
+            OnClick(fun _ -> count <- count + 1)
+            "Click me"
+        }
+    }

@@ -23,25 +23,22 @@ type Home() as this =
         else
             items
 
-    member _.MainContent =
-        html.fragment [|
-            div {
-                a {
-                    style { color (if this.query.HasValue then "hotpink" else "grey") }
-                    href "?query=3"
-                    "filter: bigger than 3"
-                }
+    member _.MainContent = fragment {
+        div {
+            a {
+                style { color (if this.query.HasValue then "hotpink" else "grey") }
+                href "?query=3"
+                "filter: bigger than 3"
             }
-            ul {
-                region {
-                    for i in this.FilteredItems do
-                        li {
-                            style { color "green" }
-                            $"item {i}"
-                        }
+        }
+        ul {
+            for i in this.FilteredItems do
+                li {
+                    style { color "green" }
+                    $"item {i}"
                 }
-            }
-        |]
+        }
+    }
 
     override _.OnInitializedAsync() = task {
         do! Task.Delay 2000
@@ -53,17 +50,16 @@ type Home() as this =
         this.StateHasChanged()
     }
 
-    override _.Render() =
-        html.fragment [|
-            PageTitle'() { "Home" }
-            SectionContent'() {
-                SectionName "header"
-                h1 { "Home" }
-            }
-            region {
-                if items.IsEmpty then
-                    MudProgressLinear'' { Indeterminate }
-                else
-                    this.MainContent
-            }
-        |]
+    override _.Render() = fragment {
+        PageTitle'' { "Home" }
+        SectionContent'' {
+            SectionName "header"
+            h1 { "Home" }
+        }
+        region {
+            if items.IsEmpty then
+                MudProgressLinear'' { Indeterminate }
+            else
+                this.MainContent
+        }
+    }

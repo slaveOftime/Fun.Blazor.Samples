@@ -9,12 +9,7 @@ open FunWasm.AntDesignDemo
 
 let builder = WebAssemblyHostBuilder.CreateDefault(Environment.GetCommandLineArgs())
 
-#if DEBUG
-builder.AddFunBlazor("#app", html.hotReloadComp (app, "FunWasm.AntDesignDemo.App.app"))
-#else
 builder.AddFunBlazor("#app", app)
-#endif
-
 builder.Services.AddFunBlazorWasm()
 builder.Services.AddAntDesign()
 

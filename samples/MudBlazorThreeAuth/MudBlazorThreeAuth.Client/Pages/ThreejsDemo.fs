@@ -7,6 +7,7 @@ open Microsoft.AspNetCore.Components.Web
 open Fun.Result
 open Fun.Blazor
 open MudBlazor
+open HomagGroup.Blazor3D
 open HomagGroup.Blazor3D.Enums
 open HomagGroup.Blazor3D.Maths
 open HomagGroup.Blazor3D.Scenes
@@ -69,32 +70,31 @@ type ThreejsDemo() as this =
     [<Inject>]
     member val Snackbar: ISnackbar = Unchecked.defaultof<ISnackbar> with get, set
 
-    override _.Render() =
-        html.fragment [|
-            PageTitle'() { "Threejs" }
-            SectionContent'() {
-                SectionName "header"
-                h1 { "Threejs" }
-            }
-            div {
-                MudButtonGroup'' {
-                    Variant Variant.Outlined
-                    MudButton'' {
-                        StartIcon Icons.Material.Filled.Add
-                        OnClick(fun _ -> addRandomCube ())
-                        "Add cube"
-                    }
-                    MudButton'' {
-                        StartIcon Icons.Material.Filled.Download
-                        OnClick(fun _ -> loadStl "https://threejs.org/examples/models/stl/ascii/slotted_disk.stl")
-                        "Load slotted_disk stl model"
-                    }
+    override _.Render() = fragment {
+        PageTitle'' { "Threejs" }
+        SectionContent'' {
+            SectionName "header"
+            h1 { "Threejs" }
+        }
+        div {
+            MudButtonGroup'' {
+                Variant Variant.Outlined
+                MudButton'' {
+                    StartIcon Icons.Material.Filled.Add
+                    OnClick(fun _ -> addRandomCube ())
+                    "Add cube"
+                }
+                MudButton'' {
+                    StartIcon Icons.Material.Filled.Download
+                    OnClick(fun _ -> loadStl "https://threejs.org/examples/models/stl/ascii/slotted_disk.stl")
+                    "Load slotted_disk stl model"
                 }
             }
-            region { if isLoading then MudProgressLinear'' { Indeterminate } }
-            Viewer'' {
-                Scene scene
-                ViewerSettings viewSettings
-                ref (fun x -> viewerRef <- Some x)
-            }
-        |]
+        }
+        region { if isLoading then MudProgressLinear'' { Indeterminate } }
+        Viewer'' {
+            Scene scene
+            ViewerSettings viewSettings
+            ref (fun x -> viewerRef <- Some x)
+        }
+    }

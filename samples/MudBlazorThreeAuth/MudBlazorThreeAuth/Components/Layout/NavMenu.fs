@@ -30,28 +30,26 @@ type NavMenu =
             alignItemsCenter
             gap 10
         }
-        childContent [|
-            NavLink'() {
-                href ""
-                Match NavLinkMatch.All
-                "Home"
-            }
-            NavLink'() {
-                href "counter"
-                "Counter"
-            }
-            NavLink'() {
-                href "data-grid-demo"
-                "Data Grid Demo"
-            }
-            NavLink'() {
-                href "threejs"
-                "Threejs Demo"
-            }
-            NavLink'() {
-                href "form"
-                "Form demo"
-            }
-            NavMenu.LogoutBtn
-        |]
+        NavLink'' {
+            href ""
+            Match NavLinkMatch.All
+            "Home"
+        }
+        NavLink'' {
+            href "counter"
+            "Counter"
+        }
+        NavLink'' {
+            href "data-grid-demo"
+            "Data Grid Demo"
+        }
+        NavLink'' {
+            href "threejs"
+            "Threejs Demo"
+        }
+        NavLink'' {
+            href "form"
+            "Form demo"
+        }
+        NavMenu.LogoutBtn
     }

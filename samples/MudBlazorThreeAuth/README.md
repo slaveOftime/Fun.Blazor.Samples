@@ -5,7 +5,7 @@ This project is trying to follow the default blazor official template
 
 Open terminal and run
     
-    dotnet watch run --project .\MudBlazorThreeAuth\MudBlazorThreeAuth.fsproj
+    dotnet run --project .\MudBlazorThreeAuth\MudBlazorThreeAuth.fsproj
 
 
 ## Blazor3D

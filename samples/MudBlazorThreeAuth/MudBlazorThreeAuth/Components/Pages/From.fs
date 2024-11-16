@@ -31,46 +31,43 @@ type Form() as this =
         method "post"
         dataEnhance
         formName "person-info"
-        childContent [|
-            html.blazor<AntiforgeryToken> ()
-            input {
-                type' InputTypes.text
-                name (nameof this.Query)
-                value this.Query
-            }
-            button {
-                type' InputTypes.submit
-                "Submit"
-            }
-            region {
-                if String.IsNullOrEmpty this.Query || this.Query.Length > 5 then
-                    div {
-                        style { color "red" }
-                        $"{nameof this.Query} is not valid"
-                    }
-            }
-        |]
+        html.blazor<AntiforgeryToken> ()
+        input {
+            type' InputTypes.text
+            name (nameof this.Query)
+            value this.Query
+        }
+        button {
+            type' InputTypes.submit
+            "Submit"
+        }
+        region {
+            if String.IsNullOrEmpty this.Query || this.Query.Length > 5 then
+                div {
+                    style { color "red" }
+                    $"{nameof this.Query} is not valid"
+                }
+        }
     }
 
-    override _.Render() =
-        html.fragment [|
-            PageTitle'() { "Form demo" }
-            SectionContent'() {
-                SectionName "header"
-                h1 { "Form demo" }
+    override _.Render() = fragment {
+        PageTitle'' { "Form demo" }
+        SectionContent'' {
+            SectionName "header"
+            h1 { "Form demo" }
+        }
+        div {
+            style { height "100vh" }
+            a {
+                href "form?#person-info"
+                "check the form"
             }
-            div {
-                style { height "100vh" }
-                a {
-                    href "form?#person-info"
-                    "check the form"
-                }
-            }
-            h2 {
-                id "person-info"
-                "person info"
-            }
-            this.FormView
-            region { if isSubmitting then progress.create () }
-            div { style { height "100vh" } }
-        |]
+        }
+        h2 {
+            id "person-info"
+            "person info"
+        }
+        this.FormView
+        region { if isSubmitting then progress.create () }
+        div { style { height "100vh" } }
+    }

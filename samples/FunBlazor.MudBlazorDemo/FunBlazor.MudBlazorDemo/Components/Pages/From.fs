@@ -32,40 +32,37 @@ type Form() as this =
         method "post"
         dataEnhance
         formName "person-info"
-        childContent [|
-            html.blazor<AntiforgeryToken> ()
-            MudTextField'' {
-                "name", nameof this.Query
-                Value this.Query
-                Error(String.IsNullOrEmpty this.Query || this.Query.Length > 5)
-                ErrorText $"{nameof this.Query} is not valid"
-            }
-            MudButton'' {
-                ButtonType ButtonType.Submit
-                "Submit"
-            }
-        |]
+        html.blazor<AntiforgeryToken> ()
+        MudTextField'' {
+            "name", nameof this.Query
+            Value this.Query
+            Error(String.IsNullOrEmpty this.Query || this.Query.Length > 5)
+            ErrorText $"{nameof this.Query} is not valid"
+        }
+        MudButton'' {
+            ButtonType ButtonType.Submit
+            "Submit"
+        }
     }
 
-    override _.Render() =
-        html.fragment [|
-            PageTitle'() { "Form demo" }
-            SectionContent'() {
-                SectionName "header"
-                h1 { "Form demo" }
+    override _.Render() = fragment {
+        PageTitle'' { "Form demo" }
+        SectionContent'' {
+            SectionName "header"
+            h1 { "Form demo" }
+        }
+        div {
+            style { height "100vh" }
+            MudLink'' {
+                Href "form?#person-info"
+                "check the form"
             }
-            div {
-                style { height "100vh" }
-                MudLink'' {
-                    Href "form?#person-info"
-                    "check the form"
-                }
-            }
-            h2 {
-                id "person-info"
-                "person info"
-            }
-            this.FormView
-            region { if isSubmitting then MudProgressLinear'() { Indeterminate true } }
-            div { style { height "100vh" } }
-        |]
+        }
+        h2 {
+            id "person-info"
+            "person info"
+        }
+        this.FormView
+        region { if isSubmitting then MudProgressLinear'' { Indeterminate true } }
+        div { style { height "100vh" } }
+    }

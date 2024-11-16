@@ -34,7 +34,7 @@ type DataGrid =
                     |> items.Publish
                 })
 
-                adaptiview () {
+                adapt {
                     let! items = items
                     MudDataGrid'' {
                         Items(defaultArg items.Value List.empty)
