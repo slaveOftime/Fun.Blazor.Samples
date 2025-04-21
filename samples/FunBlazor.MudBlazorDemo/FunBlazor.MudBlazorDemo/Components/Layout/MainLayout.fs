@@ -11,6 +11,7 @@ type MainLayout() as this =
 
     let content = fragment {
         MudThemeProvider''
+        MudPopoverProvider'' { interactiveAuto }
         MudLayout'' {
             MudAppBar'' {
                 // This will not work, because the layout is not all in server/client interactive mode,
