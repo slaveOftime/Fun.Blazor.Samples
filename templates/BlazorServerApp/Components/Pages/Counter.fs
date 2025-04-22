@@ -1,10 +1,10 @@
-namespace ServerOnlyApp.Components.Pages
+namespace BlazorServerApp.Components.Pages
 
 open Microsoft.AspNetCore.Components
 open Microsoft.AspNetCore.Components.Web
 open Fun.Blazor
 
-[<Route "/counter"; FunInteractiveServer>]
+[<Route "/counter">]
 type Counter() =
     inherit FunComponent()
 

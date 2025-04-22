@@ -1,4 +1,4 @@
-namespace ServerOnlyApp.Components.Layout
+namespace BlazorServerApp.Components.Layout
 
 open Microsoft.AspNetCore.Components
 open Fun.Blazor

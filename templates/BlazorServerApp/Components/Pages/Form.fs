@@ -1,4 +1,4 @@
-﻿namespace ServerOnlyApp.Components.Pages
+﻿namespace BlazorServerApp.Components.Pages
 
 open System
 open System.Threading.Tasks
@@ -7,7 +7,7 @@ open Microsoft.AspNetCore.Components.Web
 open Microsoft.AspNetCore.Components.Forms
 open Fun.Blazor
 
-[<Route "/form"; FunInteractiveServer>]
+[<Route "/form">]
 type Form() as this =
     inherit FunComponent()
 
@@ -27,14 +27,10 @@ type Form() as this =
 
     member _.FormView = form {
         onsubmit (ignore >> this.Submit)
-        method "post"
-        dataEnhance
-        formName "person-info"
         html.blazor<AntiforgeryToken> ()
         input {
-            type' InputTypes.text
-            name (nameof this.Query)
             value this.Query
+            onchange (fun e -> this.Query <- string e.Value)
         }
         button {
             type' InputTypes.submit

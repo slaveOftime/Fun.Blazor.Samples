@@ -1,8 +1,8 @@
 {
     "$schema": "http://json.schemastore.org/template",
-    "identity": "Fun.ServerOnly.App",
-    "shortName": "fun-server-only",
-    "name": "Fun.ServerOnly.App",
+    "identity": "Fun.Blazor.Server.App",
+    "shortName": "fun-server-app",
+    "name": "Fun.Blazor.Server.App",
     "author": "slaveoftime",
     "classifications": [
         "Web",
@@ -17,6 +17,6 @@
         "type": "project",
         "language": "F#"
     },
-    "sourceName": "ServerOnlyApp",
+    "sourceName": "BlazorServerApp",
     "preferNameDirectory": true
 }

@@ -1,4 +1,4 @@
-namespace ServerOnlyApp.Components.Pages
+namespace BlazorServerApp.Components.Pages
 
 open System
 open System.Threading.Tasks
@@ -6,7 +6,7 @@ open Microsoft.AspNetCore.Components
 open Microsoft.AspNetCore.Components.Web
 open Fun.Blazor
 
-[<Route "/"; FunInteractiveServer>]
+[<Route "/">]
 type Home() as this =
     inherit FunComponent()
 
@@ -48,7 +48,7 @@ type Home() as this =
         do! Task.Delay 1000
         items <- [ 1..5 ]
         this.StateHasChanged()
-
+        
         do! Task.Delay 1000
         items <- [ 1..10 ]
         this.StateHasChanged()
@@ -60,5 +60,5 @@ type Home() as this =
             SectionName "header"
             h1 { "Home" }
         }
-        region { if items.IsEmpty then progress.create () else this.MainContent }
+        region { if items.IsEmpty then progress { } else this.MainContent }
     }

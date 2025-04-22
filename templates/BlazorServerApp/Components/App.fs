@@ -1,4 +1,4 @@
-namespace ServerOnlyApp.Components
+namespace BlazorServerApp.Components
 
 open Fun.Blazor
 open Microsoft.AspNetCore.Components.Web
@@ -29,11 +29,11 @@ type App() =
                         fontWeightBold
                     }
                 }
-                HeadOutlet''
+                HeadOutlet'' { interactiveServer }
             }
             body {
-                html.blazor<Routes> ()
-                script { src "_framework/blazor.web.js" }
+                html.blazor<Routes> (renderMode = RenderMode.InteractiveServer)
+                script { src "_framework/blazor.server.js" }
             }
         }
     }

@@ -1,19 +1,7 @@
-namespace ServerOnlyApp.Components.Layout
+namespace BlazorServerApp.Components.Layout
 
 open Microsoft.AspNetCore.Components.Routing
 open Fun.Blazor
-
-
-[<AutoOpen>]
-module Extensions =
-    open Fun.Blazor.Operators
-
-    type NavLink' with
-
-        [<CustomOperation "Href">]
-        member inline _.Href([<InlineIfLambda>] render: AttrRenderFragment, url: string) = render ==> ("href" => url)
-
-    let NavLink'' = NavLink'()
 
 
 type NavMenu =
@@ -24,16 +12,16 @@ type NavMenu =
             gap 10
         }
         NavLink'' {
-            Href ""
+            href ""
             Match NavLinkMatch.All
             "Home"
         }
         NavLink'' {
-            Href "counter"
+            href "counter"
             "Counter"
         }
         NavLink'' {
-            Href "form"
+            href "form"
             "Form demo"
         }
     }

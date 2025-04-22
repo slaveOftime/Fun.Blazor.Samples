@@ -1,8 +1,8 @@
-namespace ServerOnlyApp.Components
+namespace BlazorServerApp.Components
 
 open System.Reflection
 open Fun.Blazor
-open ServerOnlyApp.Components.Layout
+open BlazorServerApp.Components.Layout
 
 type Routes() =
     inherit FunComponent()

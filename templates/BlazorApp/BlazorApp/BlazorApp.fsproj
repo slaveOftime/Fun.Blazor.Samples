@@ -8,7 +8,7 @@
 		<Compile Include="Components/Layout/NavMenu.fs" />
 		<Compile Include="Components/Layout/MainLayout.fs" />
 		<Compile Include="Components/Pages/Home.fs" />
-		<Compile Include="Components/Pages/From.fs" />
+		<Compile Include="Components/Pages/Form.fs" />
 		<Compile Include="Components/Routes.fs" />
 		<Compile Include="Components/App.fs" />
 		<Compile Include="Startup.fs" />
