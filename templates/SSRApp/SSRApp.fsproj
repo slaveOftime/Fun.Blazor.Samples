@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<Compile Include="View/Components/Login.fs" />
 		<Compile Include="View/Components/Counter.fs" />
@@ -17,14 +17,15 @@
 		<Compile Include="View/App.fs" />
 		<Compile Include="Startup.fs" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
 		<PackageReference Include="Fun.Htmx" Version="4.1.*" />
 		<PackageReference Include="Fun.Blazor" Version="4.1.*" />
 		<PackageReference Include="Fun.Blazor.Server" Version="4.1.*" />
 		<PackageReference Include="Fun.Blazor.CustomElements" Version="4.1.*" />
-		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="9.0.*" />
-		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="9.0.*" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="10.0.*" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="10.0.*" />
+		<PackageReference Include="Microsoft.AspNetCore.App.Internal.Assets" Version="10.0.*" />
 	</ItemGroup>
 
 </Project>

@@ -19,6 +19,7 @@ builder.Services.AddFunBlazorServer()
 let app = builder.Build()
 
 app.UseStaticFiles()
+app.MapStaticAssets()
 app.UseAntiforgery()
 
 app.MapRazorComponents<App>()
