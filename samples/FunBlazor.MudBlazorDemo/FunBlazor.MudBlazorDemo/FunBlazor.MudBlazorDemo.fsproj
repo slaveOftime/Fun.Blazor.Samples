@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<Compile Include="Components/Layout/NavMenu.fs" />
 		<Compile Include="Components/Layout/MainLayout.fs" />
@@ -13,15 +13,16 @@
 		<Compile Include="Components/App.fs" />
 		<Compile Include="Startup.fs" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
 		<PackageReference Include="Fun.Blazor" Version="4.1.*" />
 		<PackageReference Include="Fun.Blazor.Server" Version="4.1.*" />
-    	<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.App.Internal.Assets" Version="10.0.*" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.*" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
-	  <ProjectReference Include="..\FunBlazor.MudBlazorDemo.Client\FunBlazor.MudBlazorDemo.Client.fsproj" />
+		<ProjectReference Include="..\FunBlazor.MudBlazorDemo.Client\FunBlazor.MudBlazorDemo.Client.fsproj" />
 	</ItemGroup>
 
 </Project>

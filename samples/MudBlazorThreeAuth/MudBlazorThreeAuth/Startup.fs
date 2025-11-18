@@ -22,6 +22,7 @@ builder.Services.AddAuthorization()
 let app = builder.Build()
 
 app.UseStaticFiles()
+app.MapStaticAssets()
 app.UseAuthentication().UseAuthorization()
 app.UseAntiforgery()
 

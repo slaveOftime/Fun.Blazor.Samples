@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Include="Fun.Blazor.Bindings\HomagGroup.Blazor3D.fs" />
@@ -15,10 +15,10 @@
 	<ItemGroup>
 		<PackageReference Include="Blazor3D" FunBlazorNamespace="HomagGroup.Blazor3D" Version="0.1.42" />
 		<PackageReference Include="Fun.Blazor" Version="4.1.*" />
-		<PackageReference Include="Fun.Blazor.MudBlazor" Version="7.15.0" />
-		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="9.0.*" />
-		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="9.0.*" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.*" PrivateAssets="all" />
+		<PackageReference Include="Fun.Blazor.MudBlazor" Version="8.14.0" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Web" Version="10.0.*" />
+		<PackageReference Include="Fun.Blazor.Microsoft.Authorization" Version="10.0.*" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.*" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.*" PrivateAssets="all" />
 	</ItemGroup>
 </Project>

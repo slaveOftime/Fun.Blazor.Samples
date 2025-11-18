@@ -65,28 +65,33 @@ let appbar =
         }
     })
 
-let navmenus = Sider'' {
-    Width 200
-    Menu'' {
-        Mode MenuMode.Inline
-        style {
-            height "100%"
-            borderRight "0"
-        }
-        MenuItem'' {
-            a {
-                href "/"
-                "Home"
+let navmenus = 
+    html.injectWithNoKey (fun (store: IShareStore) -> adapt {
+        let! isMenuOpen = store.IsMenuOpen.WithSetter()
+        Sider'' {
+            Width 200
+            Collapsed' isMenuOpen
+            Menu'' {
+                Mode MenuMode.Inline
+                style {
+                    height "100%"
+                    borderRight "0"
+                }
+                MenuItem'' {
+                    a {
+                        href "/"
+                        "Home"
+                    }
+                }
+                MenuItem'' {
+                    a {
+                        href "/counter"
+                        "Counter"
+                    }
+                }
             }
         }
-        MenuItem'' {
-            a {
-                href "/counter"
-                "Counter"
-            }
-        }
-    }
-}
+    })
 
 
 let routes = html.route [| routeCi "/counter" counterPage; routeAny homePage |]
